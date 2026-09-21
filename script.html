@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakout Bites Studio // 3-Minute Pitch Script Deliverable (ETR 2583)</title>
+  <meta name="description" content="Formal Academic Executive Pitch Script for Breakout Bites Studio - ETR 2583 E-Entrepreneurship, Kolej Profesional MARA Bandar Penawar. Presenter: Mohamad Aris Ashman Bin Sharin.">
+  <link rel="icon" type="image/png" href="App_icon_lettermark_Breakout_Bites_2K_20260912230211.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-base: #080A10;
+      --bg-card: rgba(16, 21, 34, 0.85);
+      --bg-elevated: rgba(22, 29, 48, 0.95);
+      --border-glow: rgba(0, 229, 255, 0.25);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+
+      --cyan-core: #00E5FF;
+      --cyan-dim: rgba(0, 229, 255, 0.12);
+      --emerald-core: #10B981;
+      --emerald-dim: rgba(16, 185, 129, 0.12);
+      --amber-core: #F59E0B;
+      --amber-dim: rgba(245, 158, 11, 0.12);
+
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+
+      --font-display: 'Outfit', 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.5;
+      padding: 40px 24px 80px 84px; /* 84px left gutter guarantees zero overlap with the 48px rail */
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(0, 229, 255, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(16, 185, 129, 0.04) 0%, transparent 40%);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 24px 16px 80px 72px;
+      }
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* Top Sticky Action Bar */
+    .top-action-bar {
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-glow);
+      border-radius: 12px;
+      padding: 10px 18px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      margin-bottom: 28px;
+    }
+
+    .brand-cluster {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 1px solid var(--border-glow);
+    }
+
+    .brand-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
+
+    .brand-name span {
+      color: var(--cyan-core);
+    }
+
+    .action-buttons {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-cyan {
+      background: var(--cyan-dim);
+      border: 1px solid var(--cyan-core);
+      color: var(--cyan-core);
+    }
+
+    .btn-cyan:hover {
+      background: var(--cyan-core);
+      color: #080A10;
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.4);
+    }
+
+    .btn-emerald {
+      background: var(--emerald-dim);
+      border: 1px solid var(--emerald-core);
+      color: var(--emerald-core);
+    }
+
+    .btn-emerald:hover {
+      background: var(--emerald-core);
+      color: #080A10;
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Formal Academic Dossier Header */
+    .dossier-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glow);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dossier-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan-core), var(--emerald-core));
+    }
+
+    .dossier-header-title {
+      font-family: var(--font-display);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .dossier-header-sub {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    .dossier-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 22px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .dossier-field {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field-key {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+
+    .field-val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .field-val.highlight {
+      color: var(--cyan-core);
+    }
+
+    /* Telemetry KPI Badges */
+    .telemetry-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .kpi-card {
+      background: rgba(8, 12, 20, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .kpi-icon {
+      font-size: 1.4rem;
+    }
+
+    .kpi-data {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .kpi-num {
+      font-family: var(--font-mono);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.1;
+    }
+
+    .kpi-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    /* Rehearsal Stopwatch HUD */
+    .rehearsal-box {
+      background: rgba(14, 18, 28, 0.7);
+      border: 1px solid var(--border-glow);
+      border-radius: 12px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .rehearsal-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .timer-display {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--cyan-core);
+      min-width: 90px;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 4px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      text-align: center;
+    }
+
+    .timer-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .timer-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* Script Sections */
+    .script-section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 20px;
+      position: relative;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .script-section-card:hover {
+      border-color: var(--border-glow);
+      box-shadow: 0 6px 24px rgba(0, 229, 255, 0.08);
+    }
+
+    .section-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .section-timing-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .timestamp-badge {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 6px;
+      background: var(--cyan-dim);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      color: var(--cyan-core);
+    }
+
+    .slide-ref-name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: #FFFFFF;
+    }
+
+    .section-meta-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .word-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* Cue Indicators */
+    .cues-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .cue-box {
+      background: rgba(8, 12, 20, 0.6);
+      border-radius: 8px;
+      padding: 10px 14px;
+      border-left: 3px solid var(--cyan-core);
+      font-size: 0.82rem;
+    }
+
+    .cue-box.action-cue {
+      border-left-color: var(--amber-core);
+    }
+
+    .cue-label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .cue-text {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Spoken Pitch Transcript Text */
+    .transcript-box {
+      background: rgba(10, 14, 24, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+
+    .transcript-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--cyan-core);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    .transcript-body {
+      font-size: 1.02rem;
+      line-height: 1.6;
+      color: #FFFFFF;
+    }
+
+    .transcript-body strong {
+      color: var(--cyan-core);
+      font-weight: 600;
+    }
+
+    .transcript-body em {
+      color: var(--emerald-core);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Open Subtitle Text Block (Guideline 3.e) */
+    .subtitle-export-box {
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .subtitle-text {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .copy-sub-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-secondary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .copy-sub-btn:hover {
+      background: var(--cyan-dim);
+      border-color: var(--cyan-core);
+      color: var(--cyan-core);
+    }
+
+    /* =======================================================================
+       SLENDER VERTICAL CYBER AUDIO RAIL (PINNED TO SCREEN GUTTER)
+       ======================================================================= */
+    .script-vertical-audio-dock {
+      position: fixed;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      padding: 14px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      background: rgba(13, 18, 30, 0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.65), 0 0 15px rgba(0, 229, 255, 0.08);
+      z-index: 999;
+      font-family: 'JetBrains Mono', monospace;
+      user-select: none;
+    }
+
+    /* Subtle Hover Tooltip Showing Song Name */
+    .v-track-tooltip {
+      position: absolute;
+      left: 58px;
+      top: 14px;
+      background: rgba(10, 13, 20, 0.95);
+      border: 1px solid rgba(0, 229, 255, 0.4);
+      padding: 6px 12px;
+      border-radius: 8px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+    }
+
+    .script-vertical-audio-dock:hover .v-track-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .tooltip-label {
+      display: block;
+      font-size: 0.58rem;
+      color: #00F0FF;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+
+    .tooltip-title {
+      font-size: 0.72rem;
+      color: #FFFFFF;
+    }
+
+    /* Header & Track Badge */
+    .v-dock-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .v-track-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #00F0FF;
+      background: rgba(0, 229, 255, 0.12);
+      padding: 1px 6px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 229, 255, 0.25);
+    }
+
+    /* Animated Equalizer */
+    .audio-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 12px;
+    }
+
+    .audio-bars .bar {
+      width: 2px;
+      height: 3px;
+      background: #00F0FF;
+      border-radius: 1px;
+      transition: height 0.2s;
+    }
+
+    .audio-bars.playing .bar:nth-child(1) { animation: eqBounce 0.6s ease infinite alternate; }
+    .audio-bars.playing .bar:nth-child(2) { animation: eqBounce 0.8s ease 0.2s infinite alternate; }
+    .audio-bars.playing .bar:nth-child(3) { animation: eqBounce 0.5s ease 0.4s infinite alternate; }
+
+    @keyframes eqBounce {
+      from { height: 2px; }
+      to { height: 12px; }
+    }
+
+    .v-divider {
+      width: 24px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Buttons */
+    .v-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .v-btn {
+      background: transparent;
+      border: none;
+      color: #94A3B8;
+      cursor: pointer;
+      font-size: 0.88rem;
+      padding: 4px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      transition: transform 0.15s ease, color 0.15s ease, background 0.15s ease;
+    }
+
+    .v-btn:hover {
+      transform: scale(1.18);
+      color: #00F0FF;
+      background: rgba(0, 229, 255, 0.12);
+    }
+
+    .v-btn.play-btn {
+      color: #00F0FF;
+      font-size: 1.05rem;
+    }
+
+    .v-btn.loop-btn.active {
+      color: #10B981;
+      text-shadow: 0 0 8px #10B981;
+    }
+
+    /* Vertical Slider Configuration */
+    .v-volume-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .v-vol-icon {
+      font-size: 0.76rem;
+      cursor: pointer;
+      line-height: 1;
+      transition: transform 0.15s ease;
+    }
+
+    .v-vol-icon:hover {
+      transform: scale(1.2);
+    }
+
+    .v-slider {
+      -webkit-appearance: slider-vertical;
+      appearance: slider-vertical;
+      writing-mode: vertical-lr;
+      direction: rtl;
+      width: 14px;
+      height: 60px;
+      accent-color: #00F0FF;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .v-vol-val {
+      font-size: 0.60rem;
+      color: #64748B;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Print Stylesheet */
+    @media print {
+      body {
+        background: #FFFFFF !important;
+        color: #111827 !important;
+        padding: 0 !important;
+      }
+
+      .top-action-bar,
+      .rehearsal-box,
+      .copy-sub-btn,
+      .script-vertical-audio-dock {
+        display: none !important;
+      }
+
+      .dossier-card {
+        background: #FFFFFF !important;
+        border: 1px solid #E5E7EB !important;
+        color: #111827 !important;
+        box-shadow: none !important;
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+      }
+
+      .dossier-card::before {
+        display: none !important;
+      }
+
+      .dossier-header-title {
+        color: #111827 !important;
+      }
+
+      .field-val, .dossier-header-sub {
+        color: #374151 !important;
+      }
+
+      .field-val.highlight {
+        color: #0284C7 !important;
+      }
+
+      .kpi-card {
+        background: #F9FAFB !important;
+        border: 1px solid #E5E7EB !important;
+      }
+
+      .kpi-num {
+        color: #111827 !important;
+      }
+
+      .script-section-card {
+        background: #FFFFFF !important;
+        border: 1px solid #E5E7EB !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 16px !important;
+        padding: 16px !important;
+      }
+
+      .slide-ref-name {
+        color: #111827 !important;
+      }
+
+      .timestamp-badge {
+        background: #E0F2FE !important;
+        color: #0369A1 !important;
+        border: 1px solid #BAE6FD !important;
+      }
+
+      .cue-box {
+        background: #F9FAFB !important;
+        border-left-color: #0284C7 !important;
+      }
+
+      .transcript-box {
+        background: #F8FAFC !important;
+        border: 1px solid #E2E8F0 !important;
+      }
+
+      .transcript-body {
+        color: #0F172A !important;
+      }
+
+      .transcript-body strong {
+        color: #0369A1 !important;
+      }
+
+      .transcript-body em {
+        color: #047857 !important;
+      }
+
+      .subtitle-export-box {
+        background: #F1F5F9 !important;
+        border: 1px solid #CBD5E1 !important;
+      }
+
+      .subtitle-text {
+        color: #475569 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Top Sticky Action Bar -->
+    <header class="top-action-bar">
+      <div class="brand-cluster">
+        <img src="App_icon_lettermark_Breakout_Bites_2K_20260912230211.png" 
+             alt="Breakout Bites Icon" 
+             class="brand-icon"
+             onerror="this.onerror=null; this.src='App_icon_lettermark_Breakout_Bites_2K_20260912230211.jpg';">
+        <div class="brand-name">BREAKOUT BITES <span>STUDIO</span></div>
+      </div>
+
+      <div class="action-buttons">
+        <a href="index.html" class="btn btn-cyan" title="Launch Interactive 16:9 Presentation Deck">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+          <span>🖥️ Launch Slides</span>
+        </a>
+        <button class="btn btn-emerald" onclick="window.print()" title="Print or Export Script as PDF (Ctrl+P)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>🖨️ Print Script PDF</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Formal Academic Dossier Header -->
+    <section class="dossier-card">
+      <div class="dossier-header-title">
+        <span>EXECUTIVE PITCH SCRIPT // FORMAL DELIVERABLE</span>
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; background: var(--cyan-dim); border: 1px solid var(--cyan-core); color: var(--cyan-core); padding: 4px 10px; border-radius: 6px;">
+          ETR 2583 COMPLIANT
+        </span>
+      </div>
+      <div class="dossier-header-sub">
+        Calibrated word-for-word pitch transcript with synchronized slide flip cues, non-verbal performance markers, and open subtitle text for video editing.
+      </div>
+
+      <div class="dossier-grid">
+        <div class="dossier-field">
+          <span class="field-key">Presenter / Student</span>
+          <span class="field-val highlight">Mohamad Aris Ashman Bin Sharin</span>
+        </div>
+        <div class="dossier-field">
+          <span class="field-key">Student ID</span>
+          <span class="field-val highlight" style="font-family: var(--font-mono);">PDA-2502-024</span>
+        </div>
+        <div class="dossier-field">
+          <span class="field-key">Class</span>
+          <span class="field-val highlight" style="font-family: var(--font-mono);">DIA 4B</span>
+        </div>
+        <div class="dossier-field">
+          <span class="field-key">Role & Designation</span>
+          <span class="field-val">Founder & Head of Operations</span>
+        </div>
+        <div class="dossier-field">
+          <span class="field-key">Course Code & Name</span>
+          <span class="field-val">ETR 2583: E-Entrepreneurship</span>
+        </div>
+        <div class="dossier-field">
+          <span class="field-key">Assessment Item</span>
+          <span class="field-val">3-Minute Video Pitch Presentation</span>
+        </div>
+      </div>
+
+      <!-- Telemetry Strip -->
+      <div class="telemetry-strip">
+        <div class="kpi-card">
+          <div class="kpi-icon">⏱️</div>
+          <div class="kpi-data">
+            <span class="kpi-num" style="color: var(--cyan-core);">3:00 MIN</span>
+            <span class="kpi-label">Strict Target Duration</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">📝</div>
+          <div class="kpi-data">
+            <span class="kpi-num" id="totalWordCount" style="color: #FFFFFF;">402 WORDS</span>
+            <span class="kpi-label">Pitch Word Count</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">🎙️</div>
+          <div class="kpi-data">
+            <span class="kpi-num" style="color: var(--emerald-core);">~129 WPM</span>
+            <span class="kpi-label">Natural Speech Velocity</span>
+          </div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">📑</div>
+          <div class="kpi-data">
+            <span class="kpi-num">7 SLIDES</span>
+            <span class="kpi-label">Deck Synchronization</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rehearsal Stopwatch HUD -->
+    <div class="rehearsal-box">
+      <div class="rehearsal-left">
+        <div class="timer-display" id="stopwatchDisplay">00:00</div>
+        <div>
+          <div style="font-weight: 700; font-size: 0.95rem;">Rehearsal Stopwatch</div>
+          <div class="timer-label">Practice your pitch to guarantee delivery stays under 3:00 minutes.</div>
+        </div>
+      </div>
+      <div class="timer-controls">
+        <button class="btn btn-cyan" id="startTimerBtn">Start Practice</button>
+        <button class="btn" style="background: rgba(255,255,255,0.06); color: var(--text-primary);" id="resetTimerBtn">Reset</button>
+      </div>
+    </div>
+
+    <!-- =======================================================================
+         SECTION 1: SLIDE 1 // MISSION CONTROL & SUN TZU HOOK
+         ======================================================================= -->
+    <article class="script-section-card" id="sec-1">
+      <div class="section-header-bar">
+        <div class="section-timing-title">
+          <span class="timestamp-badge">0:00 – 0:25</span>
+          <span class="slide-ref-name">SLIDE 1 // MISSION CONTROL & SUN TZU HOOK</span>
+        </div>
+        <div class="section-meta-right">
+          <span class="word-badge">58 words (approx. 25 sec)</span>
+        </div>
+      </div>
+
+      <div class="cues-container">
+        <div class="cue-box">
+          <div class="cue-label">Deck Navigation Cue</div>
+          <div class="cue-text">[SLIDE 1 Displayed on screen from 0:00]</div>
+        </div>
+        <div class="cue-box action-cue">
+          <div class="cue-label">Non-Verbal & Body Language Cue</div>
+          <div class="cue-text">[Direct eye contact with lens, confident upright posture, commanding and engaging opening delivery]</div>
+        </div>
+      </div>
+
+      <div class="transcript-box">
+        <div class="transcript-label">Spoken Pitch Transcript (Verbatim)</div>
+        <p class="transcript-body">
+          "Sun Tzu once wrote, <em>'In the midst of chaos, there is also opportunity.'</em> For college students past midnight, that chaos isn't a battlefield—it's looming assignment deadlines, locked cafeterias, and sudden hunger. While others speculate on cravings, <strong>Breakout Bites Studio</strong> executes on demand. Good day, I am <strong>Mohamad Aris Ashman</strong>, and this is our campus-driven social commerce venture."
+        </p>
+      </div>
+
+      <div class="subtitle-export-box">
+        <div class="subtitle-text">
+          SUBTITLE: Sun Tzu wrote, 'In the midst of chaos, there is opportunity.' Past midnight, that chaos is assignment deadlines and locked cafeterias. While others speculate, Breakout Bites Studio executes on demand. I am Mohamad Aris Ashman, and this is our campus venture.
+        </div>
+        <button class="copy-sub-btn" onclick="copySubtitle(this)">Copy Subtitle</button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         SECTION 2: SLIDE 2 // THE FRICTION POINT (CAMPUS CRISIS)
+         ======================================================================= -->
+    <article class="script-section-card" id="sec-2">
+      <div class="section-header-bar">
+        <div class="section-timing-title">
+          <span class="timestamp-badge">0:25 – 0:55</span>
+          <span class="slide-ref-name">SLIDE 2 // THE FRICTION POINT (CAMPUS CRISIS)</span>
+        </div>
+        <div class="section-meta-right">
+          <span class="word-badge">56 words (approx. 30 sec)</span>
+        </div>
+      </div>
+
+      <div class="cues-container">
+        <div class="cue-box">
+          <div class="cue-label">Deck Navigation Cue</div>
+          <div class="cue-text">[CUE: Flip to Slide 2 as you say "Between 11:00 PM"]</div>
+        </div>
+        <div class="cue-box action-cue">
+          <div class="cue-label">Non-Verbal & Body Language Cue</div>
+          <div class="cue-text">[Lean slightly forward, serious empathetic tone, hand gesture expressing student friction and frustration]</div>
+        </div>
+      </div>
+
+      <div class="transcript-box">
+        <div class="transcript-label">Spoken Pitch Transcript (Verbatim)</div>
+        <p class="transcript-body">
+          "Between <strong>11:00 PM and 2:00 AM</strong>, cognitive fatigue triggers severe study hunger. Yet campus cafeterias lock up by <strong>10:00 PM</strong>. Convenience store crackers turn <em>soggy</em> in hostel humidity, while delivery aggregator apps charge a punishing <strong>six to eight ringgit surcharge</strong> on a simple snack. Students are left paying double or going to sleep exhausted and unfueled."
+        </p>
+      </div>
+
+      <div class="subtitle-export-box">
+        <div class="subtitle-text">
+          SUBTITLE: Between 11:00 PM and 2:00 AM, cognitive fatigue triggers hunger. Campus cafeterias lock by 10:00 PM, store snacks turn soggy, and delivery apps charge RM6 to RM8 surcharges. Students are left paying double or sleeping unfueled.
+        </div>
+        <button class="copy-sub-btn" onclick="copySubtitle(this)">Copy Subtitle</button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         SECTION 3: SLIDE 3 // HERO PRODUCT ARCHITECTURE
+         ======================================================================= -->
+    <article class="script-section-card" id="sec-3">
+      <div class="section-header-bar">
+        <div class="section-timing-title">
+          <span class="timestamp-badge">0:55 – 1:35</span>
+          <span class="slide-ref-name">SLIDE 3 // HERO PRODUCT ARCHITECTURE</span>
+        </div>
+        <div class="section-meta-right">
+          <span class="word-badge">65 words (approx. 40 sec)</span>
+        </div>
+      </div>
+
+      <div class="cues-container">
+        <div class="cue-box">
+          <div class="cue-label">Deck Navigation Cue</div>
+          <div class="cue-text">[CUE: Flip to Slide 3 on "Enter Breakout Bites"]</div>
+        </div>
+        <div class="cue-box action-cue">
+          <div class="cue-label">Non-Verbal & Body Language Cue</div>
+          <div class="cue-text">[Lift/hold Popia Cheese tub into camera view, point to tamper-evident seal, dynamic finger snap for crunch emphasis]</div>
+        </div>
+      </div>
+
+      <div class="transcript-box">
+        <div class="transcript-label">Spoken Pitch Transcript (Verbatim)</div>
+        <p class="transcript-body">
+          "Enter <strong>Breakout Bites</strong>. Our flagship hero product is our <strong>Handmade Popia Cheese</strong>, retailing at <strong>RM 6.00</strong>. We fry paper-thin pastry to golden perfection, producing an audible <em>eighty-five decibel crunch</em>, and toss it in our signature savory-sweet cheese glaze. Packaged in airtight tamper-evident PET tubs, the crunch stays preserved for weeks. Alongside it, our nostalgic <strong>Biskut Aiskrim at RM 4.00</strong> provides the perfect sweet cross-sell companion."
+        </p>
+      </div>
+
+      <div class="subtitle-export-box">
+        <div class="subtitle-text">
+          SUBTITLE: Enter Breakout Bites. Our flagship Handmade Popia Cheese retails at RM6.00 with an 85dB crunch and savory-sweet glaze in airtight PET tubs. Alongside it, nostalgic Biskut Aiskrim at RM4.00 provides the perfect sweet companion.
+        </div>
+        <button class="copy-sub-btn" onclick="copySubtitle(this)">Copy Subtitle</button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         SECTION 4: SLIDE 4 // THE 9-BLOCK BMC CANVAS
+         ======================================================================= -->
+    <article class="script-section-card" id="sec-4">
+      <div class="section-header-bar">
+        <div class="section-timing-title">
+          <span class="timestamp-badge">1:35 – 2:05</span>
+          <span class="slide-ref-name">SLIDE 4 // THE 9-BLOCK BMC CANVAS</span>
+        </div>
+        <div class="section-meta-right">
+          <span class="word-badge">59 words (approx. 30 sec)</span>
+        </div>
+      </div>
+
+      <div class="cues-container">
+        <div class="cue-box">
+          <div class="cue-label">Deck Navigation Cue</div>
+          <div class="cue-text">[CUE: Flip to Slide 4 on "Behind this product"]</div>
+        </div>
+        <div class="cue-box action-cue">
+          <div class="cue-label">Non-Verbal & Body Language Cue</div>
+          <div class="cue-text">[Open-hand gestures framing the canvas slide, steady authoritative cadence, executive composure]</div>
+        </div>
+      </div>
+
+      <div class="transcript-box">
+        <div class="transcript-label">Spoken Pitch Transcript (Verbatim)</div>
+        <p class="transcript-body">
+          "Behind this product is an agile <strong>Business Model Canvas</strong>. We source pastry and cheese from bulk wholesalers, keeping unit costs <em>razor lean</em>. Our primary customer segments are <strong>KPM Bandar Penawar hostel residents</strong> and midnight study pods. We distribute through <strong>peer-to-peer dorm runners</strong>, eliminating third-party delivery markups while fostering intimate customer relationships via <strong>WhatsApp pre-order drops</strong> and post-delivery satisfaction check-ins."
+        </p>
+      </div>
+
+      <div class="subtitle-export-box">
+        <div class="subtitle-text">
+          SUBTITLE: Behind this product is an agile BMC. We source from bulk wholesalers to keep unit costs lean. We target KPM Bandar Penawar hostel residents, distributing via peer runners and building relationships through WhatsApp pre-orders.
+        </div>
+        <button class="copy-sub-btn" onclick="copySubtitle(this)">Copy Subtitle</button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         SECTION 5: SLIDE 5 // 4-TIER SOCIAL COMMERCE FUNNEL
+         ======================================================================= -->
+    <article class="script-section-card" id="sec-5">
+      <div class="section-header-bar">
+        <div class="section-timing-title">
+          <span class="timestamp-badge">2:05 – 2:38</span>
+          <span class="slide-ref-name">SLIDE 5 // 4-TIER SOCIAL COMMERCE FUNNEL</span>
+        </div>
+        <div class="section-meta-right">
+          <span class="word-badge">71 words (approx. 33 sec)</span>
+        </div>
+      </div>
+
+      <div class="cues-container">
+        <div class="cue-box">
+          <div class="cue-label">Deck Navigation Cue</div>
+          <div class="cue-text">[CUE: Flip to Slide 5 on "Our sales engine"]</div>
+        </div>
+        <div class="cue-box action-cue">
+          <div class="cue-label">Non-Verbal & Body Language Cue</div>
+          <div class="cue-text">[Enumerate 4 stages using fingers (1-2-3-4), energetic modern cadence, showcase social proof confidence]</div>
+        </div>
+      </div>
+
+      <div class="transcript-box">
+        <div class="transcript-label">Spoken Pitch Transcript (Verbatim)</div>
+        <p class="transcript-body">
+          "Our sales engine operates through a four-tier social commerce funnel. At the top, <strong>fifteen-second TikTok ASMR</strong> frying and crunch clips capture organic late-night attention with <em>zero ad spend</em>. On <strong>Instagram</strong>, aesthetic carousels and countdown stickers build social proof and pre-order urgency. Our <strong>Facebook Page</strong> connects directly with campus student groups for bulk study orders. Finally, our <strong>WhatsApp Business catalog</strong> converts orders seamlessly with instant <strong>DuitNow QR verification</strong> and direct room handoffs."
+        </p>
+      </div>
+
+      <div class="subtitle-export-box">
+        <div class="subtitle-text">
+          SUBTITLE: Our sales engine operates through a 4-tier funnel: TikTok ASMR clips capture organic reach, Instagram carousels build social proof, our Facebook Page secures bulk group orders, and WhatsApp Business converts with instant DuitNow QR pay.
+        </div>
+        <button class="copy-sub-btn" onclick="copySubtitle(this)">Copy Subtitle</button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         SECTION 6: SLIDE 6 // FINANCIAL TELEMETRY & UNIT ECONOMICS
+         ======================================================================= -->
+    <article class="script-section-card" id="sec-6">
+      <div class="section-header-bar">
+        <div class="section-timing-title">
+          <span class="timestamp-badge">2:38 – 2:52</span>
+          <span class="slide-ref-name">SLIDE 6 // FINANCIAL TELEMETRY & UNIT ECONOMICS</span>
+        </div>
+        <div class="section-meta-right">
+          <span class="word-badge">57 words (approx. 14 sec)</span>
+        </div>
+      </div>
+
+      <div class="cues-container">
+        <div class="cue-box">
+          <div class="cue-label">Deck Navigation Cue</div>
+          <div class="cue-text">[CUE: Flip to Slide 6 on "The unit economics"]</div>
+        </div>
+        <div class="cue-box action-cue">
+          <div class="cue-label">Non-Verbal & Body Language Cue</div>
+          <div class="cue-text">[Crisp, confident hand emphasis, commanding tone demonstrating total mastery of accounting metrics]</div>
+        </div>
+      </div>
+
+      <div class="transcript-box">
+        <div class="transcript-label">Spoken Pitch Transcript (Verbatim)</div>
+        <p class="transcript-body">
+          "The unit economics are robust. Each Popia tub costs <strong>RM 3.30</strong> to produce and sells for <strong>RM 6.00</strong>, yielding a <em>forty-five percent gross margin</em> or <strong>RM 2.70 net profit</strong> per tub. Our break-even point is just <strong>25 tubs per batch</strong>. A single fifty-unit batch generates <strong>RM 300 revenue</strong> and <strong>RM 135 net profit</strong>."
+        </p>
+      </div>
+
+      <div class="subtitle-export-box">
+        <div class="subtitle-text">
+          SUBTITLE: Unit economics are robust. Each Popia tub costs RM3.30 to produce and sells for RM6.00, yielding a 45% gross margin or RM2.70 net profit. Break-even is 25 tubs, and a 50-unit batch yields RM300 revenue and RM135 profit.
+        </div>
+        <button class="copy-sub-btn" onclick="copySubtitle(this)">Copy Subtitle</button>
+      </div>
+    </article>
+
+    <!-- =======================================================================
+         SECTION 7: SLIDE 7 // BATCH 01 ROLLOUT & CALL TO ACTION
+         ======================================================================= -->
+    <article class="script-section-card" id="sec-7">
+      <div class="section-header-bar">
+        <div class="section-timing-title">
+          <span class="timestamp-badge">2:52 – 3:00</span>
+          <span class="slide-ref-name">SLIDE 7 // BATCH 01 ROLLOUT & CALL TO ACTION</span>
+        </div>
+        <div class="section-meta-right">
+          <span class="word-badge">36 words (approx. 8 sec)</span>
+        </div>
+      </div>
+
+      <div class="cues-container">
+        <div class="cue-box">
+          <div class="cue-label">Deck Navigation Cue</div>
+          <div class="cue-text">[CUE: Flip to Slide 7 on "Batch 01 launches"]</div>
+        </div>
+        <div class="cue-box action-cue">
+          <div class="cue-label">Non-Verbal & Body Language Cue</div>
+          <div class="cue-text">[Point toward the screen QR code, direct camera gaze, firm closing nod, professional smile]</div>
+        </div>
+      </div>
+
+      <div class="transcript-box">
+        <div class="transcript-label">Spoken Pitch Transcript (Verbatim)</div>
+        <p class="transcript-body">
+          "<strong>Batch 01 launches this week</strong> with fifty capped tubs ready for midnight dorm drops. Scan the QR code to lock in your study fuel. Remember: <em>we don't speculate on cravings. We execute on demand.</em> Thank you."
+        </p>
+      </div>
+
+      <div class="subtitle-export-box">
+        <div class="subtitle-text">
+          SUBTITLE: Batch 01 launches this week with fifty capped tubs ready for midnight dorm drops. Scan the QR code to lock in your study fuel. Remember: we don't speculate on cravings. We execute on demand. Thank you.
+        </div>
+        <button class="copy-sub-btn" onclick="copySubtitle(this)">Copy Subtitle</button>
+      </div>
+    </article>
+
+    <!-- Copy All Subtitles Action Bar -->
+    <div style="text-align: center; margin-top: 30px;">
+      <button class="btn btn-cyan" id="copyAllSubtitlesBtn" style="padding: 12px 24px; font-size: 0.88rem;" onclick="copyAllSubtitles()">
+        📋 Copy Complete Verbatim Subtitles (For Video Overlay / CapCut / Premiere)
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Slender Vertical Audio Cyber-Dock Rail (Pinned to Screen Gutter) -->
+  <aside class="script-vertical-audio-dock" id="audioPlayerWidget" aria-label="BGM Control Rail">
+    <!-- Equalizer & Track Indicator -->
+    <div class="v-dock-header">
+      <div class="audio-bars" id="audioEqualizer" title="BGM Active">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <span class="v-track-badge" id="trackIndexBadge" title="Current Track">01</span>
+    </div>
+
+    <div class="v-divider"></div>
+
+    <!-- Playback Controls -->
+    <div class="v-controls">
+      <button class="v-btn" id="btnPrevTrack" title="Previous Track (Literature / fripSide)">⏮</button>
+      <button class="v-btn play-btn" id="btnPlayPause" title="Play / Pause">▶</button>
+      <button class="v-btn" id="btnNextTrack" title="Next Track">⏭</button>
+      <button class="v-btn loop-btn" id="btnLoopTrack" title="Toggle Loop">🔁</button>
+    </div>
+
+    <div class="v-divider"></div>
+
+    <!-- Vertical Volume Stack -->
+    <div class="v-volume-stack">
+      <span class="v-vol-icon" id="volIcon" title="Toggle Mute">🔊</span>
+      <input 
+        type="range" 
+        id="volumeSlider" 
+        min="0" 
+        max="1" 
+        step="0.01" 
+        value="0.35" 
+        class="v-slider" 
+        orient="vertical"
+        title="Master Volume"
+      >
+      <span class="v-vol-val" id="volumePercentage">35%</span>
+    </div>
+
+    <!-- Floating Hover Track Card (Tooltip that appears on dock hover) -->
+    <div class="v-track-tooltip" id="trackTooltip">
+      <span class="tooltip-label">NOW PLAYING:</span>
+      <span class="tooltip-title" id="trackTitleDisplay">Literature - Reina Ueda</span>
+    </div>
+  </aside>
+
+  <!-- Rehearsal Timer & Copy Logic -->
+  <script>
+    // Compute Exact Word Count dynamically on DOM load
+    document.addEventListener('DOMContentLoaded', () => {
+      const bodies = document.querySelectorAll('.transcript-body');
+      let count = 0;
+      bodies.forEach(b => {
+        const text = b.textContent.replace(/["“”'’]/g, ' ').trim();
+        const matches = text.match(/\b[A-Za-z0-9\-\/]+\b/g);
+        if (matches) count += matches.length;
+      });
+      const badge = document.getElementById('totalWordCount');
+      if (badge && count > 0) {
+        badge.textContent = `${count} WORDS`;
+      }
+    });
+
+    // Copy Single Subtitle Block
+    function copySubtitle(btn) {
+      const text = btn.previousElementSibling.textContent.replace('SUBTITLE: ', '').trim();
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = "✓ Copied!";
+        btn.style.color = "#10B981";
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.style.color = "";
+        }, 1800);
+      });
+    }
+
+    // Copy All Subtitles Block with Timestamps
+    function copyAllSubtitles() {
+      const cards = document.querySelectorAll('.script-section-card');
+      const compiled = [];
+      cards.forEach((card, idx) => {
+        const time = card.querySelector('.timestamp-badge') ? card.querySelector('.timestamp-badge').textContent.trim() : '';
+        const title = card.querySelector('.slide-ref-name') ? card.querySelector('.slide-ref-name').textContent.trim() : `Slide ${idx + 1}`;
+        const sub = card.querySelector('.subtitle-text') ? card.querySelector('.subtitle-text').textContent.replace('SUBTITLE:', '').trim() : '';
+        compiled.push(`[${time}] ${title}\n${sub}`);
+      });
+      const allText = compiled.join('\n\n');
+      navigator.clipboard.writeText(allText).then(() => {
+        const btn = document.getElementById('copyAllSubtitlesBtn');
+        if (btn) {
+          const orig = btn.textContent;
+          btn.textContent = "✓ Complete Timestamped Subtitles Copied to Clipboard!";
+          btn.style.color = "#10B981";
+          setTimeout(() => {
+            btn.textContent = orig;
+            btn.style.color = "";
+          }, 2200);
+        } else {
+          alert("All 7 slide subtitles copied to clipboard with timestamps, ready for video overlay / CapCut / Premiere!");
+        }
+      });
+    }
+
+    // Live Stopwatch Logic
+    let timerInterval = null;
+    let secondsElapsed = 0;
+    const display = document.getElementById('stopwatchDisplay');
+    const startBtn = document.getElementById('startTimerBtn');
+    const resetBtn = document.getElementById('resetTimerBtn');
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60).toString().padStart(2, '0');
+      const s = (sec % 60).toString().padStart(2, '0');
+      return `${m}:${s}`;
+    }
+
+    startBtn.addEventListener('click', function() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        startBtn.textContent = "Resume Practice";
+        startBtn.classList.remove('btn-emerald');
+        startBtn.classList.add('btn-cyan');
+      } else {
+        timerInterval = setInterval(() => {
+          secondsElapsed++;
+          display.textContent = formatTime(secondsElapsed);
+          if (secondsElapsed > 180) {
+            display.style.color = "#EF4444"; // Red over time
+          } else if (secondsElapsed >= 165) {
+            display.style.color = "#F59E0B"; // Amber warning
+          } else {
+            display.style.color = "#00E5FF";
+          }
+        }, 1000);
+        startBtn.textContent = "Pause Timer";
+        startBtn.classList.remove('btn-cyan');
+        startBtn.classList.add('btn-emerald');
+      }
+    });
+
+    resetBtn.addEventListener('click', function() {
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+      }
+      secondsElapsed = 0;
+      display.textContent = "00:00";
+      display.style.color = "#00E5FF";
+      startBtn.textContent = "Start Practice";
+      startBtn.classList.remove('btn-emerald');
+      startBtn.classList.add('btn-cyan');
+    });
+
+    // =======================================================================
+    // HIGH-TECH CYBER BGM AUDIO ENGINE (PARITY WITH PRESENTATION DECK)
+    // =======================================================================
+    function initScriptAudioEngine() {
+      const playlist = [
+        { 
+          title: "Literature - Reina Ueda", 
+          src: "Reina Ueda - Literature.mp3",
+          fallbackSrc: "Reina Ueda - Literature.m4a"
+        },
+        { 
+          title: "Red Liberation (Vocal)", 
+          src: "fripSide - Red Liberation (Audio).mp3",
+          fallbackSrc: "fripSide - Red Liberation (Audio).m4a"
+        },
+        { 
+          title: "Red Liberation (Inst)", 
+          src: "fripSide - Red Liberation[instrumental] (Audio).mp3",
+          fallbackSrc: "fripSide - Red Liberation[instrumental] (Audio).m4a"
+        }
+      ];
+      let currentTrackIndex = 0;
+      let isLooping = false;
+      let fallbackAttempt = 0;
+
+      const audio = new Audio();
+      audio.volume = 0.35;
+      audio.preload = "auto";
+
+      const trackTitleDisplay = document.getElementById('trackTitleDisplay');
+      const trackIndexBadge = document.getElementById('trackIndexBadge');
+      const btnPlayPause = document.getElementById('btnPlayPause');
+      const btnPrevTrack = document.getElementById('btnPrevTrack');
+      const btnNextTrack = document.getElementById('btnNextTrack');
+      const btnLoopTrack = document.getElementById('btnLoopTrack');
+      const volumeSlider = document.getElementById('volumeSlider');
+      const volumePercentage = document.getElementById('volumePercentage');
+      const volIcon = document.getElementById('volIcon');
+      const audioEqualizer = document.getElementById('audioEqualizer');
+
+      function updatePlayerUI() {
+        if (trackTitleDisplay && playlist[currentTrackIndex]) {
+          trackTitleDisplay.textContent = playlist[currentTrackIndex].title;
+        }
+        if (trackIndexBadge) {
+          trackIndexBadge.textContent = String(currentTrackIndex + 1).padStart(2, '0');
+        }
+        if (audio.paused) {
+          if (btnPlayPause) {
+            btnPlayPause.textContent = '▶';
+            btnPlayPause.title = 'Play (BGM)';
+          }
+          if (audioEqualizer) audioEqualizer.classList.remove('playing');
+        } else {
+          if (btnPlayPause) {
+            btnPlayPause.textContent = '⏸';
+            btnPlayPause.title = 'Pause (BGM)';
+          }
+          if (audioEqualizer) audioEqualizer.classList.add('playing');
+        }
+      }
+
+      function loadTrack(index, autoPlay = true) {
+        currentTrackIndex = (index + playlist.length) % playlist.length;
+        fallbackAttempt = 0;
+        const track = playlist[currentTrackIndex];
+        audio.src = encodeURI(track.src);
+        audio.loop = isLooping;
+        updatePlayerUI();
+        if (autoPlay) {
+          const p = audio.play();
+          if (p !== undefined) {
+            p.then(() => {
+              updatePlayerUI();
+            }).catch((err) => {
+              console.log("Audio playback waiting for user gesture:", err);
+              updatePlayerUI();
+            });
+          }
+        }
+      }
+
+      // Audio error fallback handler (.mp3 -> .m4a -> .wav)
+      audio.addEventListener('error', function(e) {
+        const cur = playlist[currentTrackIndex];
+        fallbackAttempt++;
+        if (fallbackAttempt === 1) {
+          const fallback = cur.fallbackSrc || cur.src.replace(/\.mp3$/i, '.m4a');
+          console.warn(`Attempting .m4a audio fallback: ${fallback}`);
+          audio.src = encodeURI(fallback);
+          audio.play().catch(()=>{});
+        } else if (fallbackAttempt === 2) {
+          const wavSrc = cur.src.replace(/\.mp3$/i, '.wav');
+          console.warn(`Attempting .wav audio fallback: ${wavSrc}`);
+          audio.src = encodeURI(wavSrc);
+          audio.play().catch(()=>{});
+        }
+      });
+
+      // Track advancement / loop behavior
+      audio.addEventListener('ended', function() {
+        if (isLooping) {
+          audio.currentTime = 0;
+          audio.play().catch(()=>{});
+        } else {
+          loadTrack(currentTrackIndex + 1, true);
+        }
+      });
+
+      audio.addEventListener('play', updatePlayerUI);
+      audio.addEventListener('pause', updatePlayerUI);
+
+      // Play / Pause toggle
+      if (btnPlayPause) {
+        btnPlayPause.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (audio.paused) {
+            audio.play().then(() => {
+              updatePlayerUI();
+            }).catch((err) => {
+              console.warn("Audio play error:", err);
+            });
+          } else {
+            audio.pause();
+          }
+          updatePlayerUI();
+        });
+      }
+
+      // Next / Prev track
+      if (btnNextTrack) {
+        btnNextTrack.addEventListener('click', function(e) {
+          e.stopPropagation();
+          loadTrack(currentTrackIndex + 1, true);
+        });
+      }
+      if (btnPrevTrack) {
+        btnPrevTrack.addEventListener('click', function(e) {
+          e.stopPropagation();
+          loadTrack(currentTrackIndex - 1, true);
+        });
+      }
+
+      // Loop toggle
+      if (btnLoopTrack) {
+        btnLoopTrack.addEventListener('click', function(e) {
+          e.stopPropagation();
+          isLooping = !isLooping;
+          audio.loop = isLooping;
+          btnLoopTrack.classList.toggle('active', isLooping);
+          btnLoopTrack.title = isLooping ? "Loop Active (Current Track)" : "Toggle Loop";
+        });
+      }
+
+      // Volume slider
+      if (volumeSlider) {
+        const handleVolume = function(e) {
+          const val = parseFloat(e.target.value);
+          audio.volume = val;
+          if (volumePercentage) volumePercentage.textContent = Math.round(val * 100) + '%';
+          if (volIcon) volIcon.textContent = val === 0 ? '🔇' : val < 0.5 ? '🔉' : '🔊';
+        };
+        volumeSlider.addEventListener('input', handleVolume);
+        volumeSlider.addEventListener('change', handleVolume);
+      }
+
+      // Mute / Unmute icon click
+      if (volIcon) {
+        volIcon.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (audio.volume > 0) {
+            audio.dataset.prevVol = audio.volume;
+            audio.volume = 0;
+            if (volumeSlider) volumeSlider.value = 0;
+            if (volumePercentage) volumePercentage.textContent = '0%';
+            volIcon.textContent = '🔇';
+          } else {
+            const restored = parseFloat(audio.dataset.prevVol || 0.35);
+            audio.volume = restored;
+            if (volumeSlider) volumeSlider.value = restored;
+            if (volumePercentage) volumePercentage.textContent = Math.round(restored * 100) + '%';
+            volIcon.textContent = restored < 0.5 ? '🔉' : '🔊';
+          }
+        });
+      }
+
+      // Autoplay with graceful user-gesture fallback
+      function initAudioPlayback() {
+        loadTrack(0, false);
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            updatePlayerUI();
+          }).catch((err) => {
+            console.log("Autoplay blocked by browser policy. Unlocking audio on first user gesture.", err);
+            updatePlayerUI();
+            const startPlaybackOnGesture = function() {
+              audio.play().then(() => {
+                updatePlayerUI();
+              }).catch(()=>{});
+              window.removeEventListener('click', startPlaybackOnGesture);
+              window.removeEventListener('keydown', startPlaybackOnGesture);
+              window.removeEventListener('touchstart', startPlaybackOnGesture);
+            };
+            window.addEventListener('click', startPlaybackOnGesture, { once: true });
+            window.addEventListener('keydown', startPlaybackOnGesture, { once: true });
+            window.addEventListener('touchstart', startPlaybackOnGesture, { once: true });
+          });
+        }
+      }
+
+      // Initialize audio engine
+      initAudioPlayback();
+    }
+
+    // Initialize safely when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScriptAudioEngine);
+    } else {
+      initScriptAudioEngine();
+    }
+  </script>
+</body>
+</html>

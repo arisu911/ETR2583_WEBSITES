@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakout Bites Studio | Curated Campus Confectionery & Late-Night Delivery</title>
+  <meta name="description" content="Breakout Bites Studio delivers curated Ice Gem and Choco Bear biscuits sealed in food-grade stand-up ziplock pouches directly to student rooms across Bandar Penawar from 8:00 PM to 1:00 AM.">
+  <link rel="icon" type="image/png" href="App_icon_lettermark_Breakout_Bites_2K_20260912230211.png">
+
+  <!-- Google Fonts: Newsreader (Editorial Serif), Inter (Sans), JetBrains Mono (Monospace) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       J.P. MORGAN EDITORIAL CORPORATE DESIGN SYSTEM
+       Curated Confectionery Brand Archetype
+       ========================================================================== */
+    :root {
+      --bg-canvas: #FFFFFF;
+      --bg-subtle: #F8F9FA;
+      --bg-card: #FFFFFF;
+      --bg-card-hover: #FCFDFE;
+      --text-main: #111827;
+      --text-muted: #4B5563;
+      --text-light: #6B7280;
+      --text-faint: #9CA3AF;
+      --border-hairline: #E5E7EB;
+      --border-focus: #111827;
+      --accent-emerald: #059669;
+      --accent-emerald-dark: #047857;
+      --accent-emerald-light: #ECFDF5;
+      --font-serif: 'Newsreader', 'Merriweather', 'Georgia', serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+      --container-max: 1200px;
+      --transition-smooth: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .site-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    .hairline {
+      height: 1px;
+      width: 100%;
+      background-color: var(--border-hairline);
+      border: none;
+    }
+
+    /* ==========================================================================
+       A. TOP UTILITY STRIP & NAVIGATION BAR
+       ========================================================================== */
+    .utility-strip {
+      background-color: var(--bg-canvas);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 0.55rem 0;
+      font-size: 0.72rem;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .utility-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .utility-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .pulse-dot {
+      width: 7px;
+      height: 7px;
+      background-color: var(--accent-emerald);
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.2);
+    }
+
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-hairline);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 4px;
+      border: 1px solid var(--border-hairline);
+      object-fit: contain;
+    }
+
+    .brand-title {
+      font-family: var(--font-serif);
+      font-size: 1.18rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.25rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: var(--text-main);
+      transition: width 0.2s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-main);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .header-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .btn-nav-wa,
+    .btn-nav-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+      border: 1px solid var(--border-hairline);
+      background-color: var(--bg-canvas);
+      padding: 0.55rem 1.15rem;
+      border-radius: 2px;
+      letter-spacing: 0.02em;
+      transition: var(--transition-smooth);
+      text-decoration: none;
+    }
+
+    .btn-nav-wa:hover,
+    .btn-nav-primary:hover {
+      border-color: var(--accent-emerald-dark);
+      background-color: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .mobile-drawer {
+      display: none;
+      flex-direction: column;
+      background-color: var(--bg-canvas);
+      border-bottom: 1px solid var(--border-hairline);
+      padding: 1.5rem 2rem;
+      gap: 1.25rem;
+    }
+
+    .mobile-drawer.open {
+      display: flex;
+    }
+
+    .mobile-drawer a {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       B. HERO SECTION (#hero)
+       ========================================================================== */
+    .hero-section {
+      padding: 5.5rem 0 4.5rem 0;
+      background-color: var(--bg-canvas);
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .kicker-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      border-left: 2px solid var(--accent-emerald);
+      padding-left: 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      line-height: 1.15;
+      font-weight: 500;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-subheadline {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      font-weight: 400;
+      max-width: 580px;
+      margin-bottom: 2.25rem;
+    }
+
+    .hero-jump-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border-hairline);
+      width: 100%;
+    }
+
+    .jump-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: 0.01em;
+    }
+
+    .jump-link:hover {
+      color: var(--accent-emerald-dark);
+      transform: translateX(2px);
+    }
+
+    .jump-link svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.2s ease;
+    }
+
+    .jump-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    .hero-visual-card {
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-hairline);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      max-width: 320px;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+    }
+
+    .hero-meta-bar {
+      width: 100%;
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 1.25rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+      text-align: left;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .meta-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+    }
+
+    .meta-val {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-top: 0.15rem;
+    }
+
+    .meta-detail {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-top: 0.15rem;
+    }
+
+    /* ==========================================================================
+       C. THE CAMPUS PROBLEM & MISSION (#about)
+       ========================================================================== */
+    .about-section {
+      padding: 5.5rem 0;
+      background-color: var(--bg-subtle);
+      border-top: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .about-split {
+      display: grid;
+      grid-template-columns: 35% 65%;
+      gap: 3.5rem;
+    }
+
+    .about-lead {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .about-headline {
+      font-family: var(--font-serif);
+      font-size: 2.35rem;
+      line-height: 1.2;
+      font-weight: 500;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+    }
+
+    .about-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .editorial-block {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      padding: 2rem 2.25rem;
+    }
+
+    .block-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .block-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .tag-friction {
+      background-color: #FEE2E2;
+      color: #991B1B;
+    }
+
+    .tag-craft {
+      background-color: var(--accent-emerald-light);
+      color: var(--accent-emerald-dark);
+    }
+
+    .block-title {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .block-text {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       D. MENU & COMBOS (#menu)
+       ========================================================================== */
+    .products-section {
+      padding: 6rem 0;
+      background-color: var(--bg-canvas);
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 2.45rem;
+      font-weight: 500;
+      color: var(--text-main);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      font-weight: 400;
+      max-width: 620px;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .product-card:hover {
+      border-color: #9CA3AF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+    }
+
+    .card-kicker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .item-code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
+
+    .badge-pill {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding: 0.15rem 0.5rem;
+      border: 1px solid var(--border-hairline);
+      border-radius: 2px;
+      color: var(--text-muted);
+    }
+
+    .badge-flagship {
+      border-color: var(--accent-emerald);
+      color: var(--accent-emerald-dark);
+      background-color: var(--accent-emerald-light);
+    }
+
+    .card-body {
+      margin-bottom: 2rem;
+    }
+
+    .product-name {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+    }
+
+    .product-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-list {
+      list-style: none;
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .spec-item {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .spec-bullet {
+      width: 4px;
+      height: 4px;
+      background-color: var(--text-light);
+      border-radius: 50%;
+    }
+
+    .card-footer {
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 1.5rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .price-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+    }
+
+    .price-value {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .btn-card-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+      padding: 0.5rem 0.9rem;
+      border: 1px solid var(--border-hairline);
+      background-color: var(--bg-canvas);
+      border-radius: 2px;
+      transition: var(--transition-smooth);
+      cursor: pointer;
+    }
+
+    .btn-card-action:hover {
+      background-color: var(--text-main);
+      color: #FFFFFF;
+      border-color: var(--text-main);
+    }
+
+    /* ==========================================================================
+       E. CAMPUS LOGISTICS (#logistics)
+       ========================================================================== */
+    .logistics-section {
+      padding: 5.5rem 0;
+      background-color: var(--bg-subtle);
+      border-top: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: var(--border-hairline);
+      border: 1px solid var(--border-hairline);
+    }
+
+    .metric-cell {
+      background-color: var(--bg-canvas);
+      padding: 2.25rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric-top {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .metric-big {
+      font-family: var(--font-mono);
+      font-size: 2.15rem;
+      font-weight: 600;
+      color: var(--text-main);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-caption {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       G. ABOUT THE FOUNDER TEASER (#founder)
+       ========================================================================== */
+    .founder-section {
+      padding: 4.5rem 0;
+      background-color: #F8F9FA;
+      border-top: 1px solid var(--border-hairline);
+      border-bottom: 1px solid var(--border-hairline);
+    }
+
+    .founder-teaser-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--border-hairline);
+      padding: 2.75rem 3.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+      transition: var(--transition-smooth);
+    }
+
+    .founder-teaser-card:hover {
+      border-color: #D1D5DB;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    }
+
+    .founder-teaser-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      max-width: 760px;
+    }
+
+    .founder-teaser-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .founder-teaser-headline {
+      font-family: var(--font-serif);
+      font-size: 2.15rem;
+      font-weight: 500;
+      color: var(--text-main);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .founder-teaser-subtitle {
+      font-size: 0.96rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .founder-teaser-action {
+      flex-shrink: 0;
+    }
+
+    .btn-teaser-dossier {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      background-color: var(--text-main);
+      color: #FFFFFF;
+      padding: 0.85rem 1.65rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      border-radius: 2px;
+      letter-spacing: 0.02em;
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-teaser-dossier:hover {
+      background-color: var(--accent-emerald-dark);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       G. DIRECT WHATSAPP ORDER DESK & CHANNELS (#contact)
+       ========================================================================== */
+    .contact-section {
+      padding: 6rem 0;
+      background-color: var(--bg-canvas);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    /* Column 1: WhatsApp Business Order Desk (Primary Conversion Hub) */
+    .flagship-card {
+      background-color: #FFFFFF;
+      border: 1px solid var(--accent-emerald);
+      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.06);
+      padding: 2.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .flagship-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .wa-badge-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background-color: var(--accent-emerald-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-emerald);
+      flex-shrink: 0;
+    }
+
+    .flagship-heading-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flagship-status {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent-emerald-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .flagship-title {
+      font-family: var(--font-serif);
+      font-size: 1.95rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .flagship-description {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .hours-block {
+      background-color: var(--bg-subtle);
+      border-left: 3px solid var(--accent-emerald);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .hours-title {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .hours-detail {
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--accent-emerald-dark);
+    }
+
+    .hours-note {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-top: 0.25rem;
+    }
+
+    .wa-button-primary,
+    .btn-whatsapp-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.65rem;
+      background-color: var(--accent-emerald);
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 1rem 1.75rem;
+      border-radius: 2px;
+      letter-spacing: 0.02em;
+      transition: var(--transition-smooth);
+      border: 1px solid var(--accent-emerald-dark);
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      text-decoration: none;
+    }
+
+    .wa-button-primary:hover,
+    .btn-whatsapp-action:hover {
+      background-color: var(--accent-emerald-dark);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    }
+
+    .wa-button-primary svg,
+    .btn-whatsapp-action svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .copy-order-hint {
+      margin-top: 1.25rem;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .copy-btn {
+      background: none;
+      border: none;
+      color: var(--accent-emerald-dark);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: inherit;
+    }
+
+    /* Column 2: Media & Community Directory */
+    .media-directory {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .media-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-hairline);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+
+    .media-card:hover {
+      border-color: #9CA3AF;
+      background-color: var(--bg-card-hover);
+      transform: translateY(-2px);
+    }
+
+    .media-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.15rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .media-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 4px;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-hairline);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      flex-shrink: 0;
+    }
+
+    .media-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .media-platform {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.2rem;
+    }
+
+    .media-title {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+
+    .media-subtitle {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .media-link,
+    .social-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-main);
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-hairline);
+      width: 100%;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .media-card:hover .media-link,
+    .media-card:hover .social-card-link {
+      color: var(--accent-emerald-dark);
+    }
+
+    .media-link svg,
+    .social-card-link svg {
+      width: 13px;
+      height: 13px;
+      transition: transform 0.2s ease;
+    }
+
+    .media-card:hover .media-link svg,
+    .media-card:hover .social-card-link svg {
+      transform: translateX(4px);
+    }
+
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-top: 1.5rem;
+    }
+
+    .footer-social-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--border-hairline);
+      border-radius: 2px;
+      color: var(--text-muted);
+      background-color: #FFFFFF;
+      transition: all var(--transition-fast);
+      text-decoration: none;
+    }
+
+    .footer-social-icon:hover {
+      color: var(--accent-emerald-dark);
+      border-color: var(--accent-emerald-border);
+      background-color: var(--accent-emerald-light);
+      transform: translateY(-1px);
+    }
+
+    .footer-social-icon svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    /* ==========================================================================
+       H. FOOTER
+       ========================================================================== */
+    .institutional-footer {
+      background-color: #FAFAFA;
+      border-top: 1px solid var(--border-hairline);
+      padding: 5rem 0 3rem 0;
+      margin-top: auto;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .footer-logo {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin-bottom: 0.85rem;
+      font-weight: 500;
+    }
+
+    .footer-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      max-width: 480px;
+    }
+
+    .footer-nav-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .footer-nav-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--border-hairline);
+      padding-bottom: 0.65rem;
+    }
+
+    .footer-links-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .footer-links-grid a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .footer-links-grid a:hover {
+      color: var(--accent-emerald-dark);
+    }
+
+    .footer-bottom-strip {
+      border-top: 1px solid var(--border-hairline);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    /* Modal for Quick Orders */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 24, 39, 0.4);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-hairline);
+      max-width: 480px;
+      width: 100%;
+      padding: 2.25rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      color: var(--text-light);
+      cursor: pointer;
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .modal-input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .modal-input-group label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+    }
+
+    .modal-input-group select,
+    .modal-input-group input {
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border-hairline);
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      border-radius: 2px;
+    }
+
+    .modal-input-group select:focus,
+    .modal-input-group input:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background-color: var(--text-main);
+      color: #FFFFFF;
+      padding: 0.85rem 1.4rem;
+      font-size: 0.85rem;
+      border-radius: 2px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      z-index: 1200;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      font-family: var(--font-mono);
+    }
+
+    .toast.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       RESPONSIVENESS (MOBILE / TABLET BREAKPOINTS)
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-headline {
+        font-size: 2.85rem;
+      }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .founder-teaser-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+        padding: 2.25rem;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .header-cta-group {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .hero-headline {
+        font-size: 2.35rem;
+      }
+      .about-split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+      .founder-teaser-card {
+        padding: 1.75rem 1.5rem;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .footer-bottom-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+
+    <!-- ==========================================================================
+         A. TOP UTILITY STRIP & NAVIGATION BAR
+         ========================================================================== -->
+    <div class="utility-strip">
+      <div class="container utility-inner">
+        <div class="utility-item">
+          <span>BREAKOUT BITES STUDIO • CURATED CAMPUS CONFECTIONERY</span>
+        </div>
+        <div class="utility-item">
+          <span class="pulse-dot"></span>
+          <span>BANDAR PENAWAR, JOHOR • DISPATCH 8:00 PM – 1:00 AM</span>
+        </div>
+      </div>
+    </div>
+
+    <header class="main-header" id="main-header">
+      <div class="container nav-container">
+        <!-- Brand / Lettermark -->
+        <a href="#hero" class="brand-mark" aria-label="Breakout Bites Studio Home">
+          <img src="App_icon_lettermark_Breakout_Bites_2K_20260912230211.png" alt="Breakout Bites Studio Lettermark" class="brand-icon">
+          <span class="brand-title">Breakout Bites Studio</span>
+        </a>
+
+        <!-- Center Navigation Links -->
+        <nav aria-label="Main Navigation">
+          <ul class="nav-links">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#menu" class="nav-link">Menu</a></li>
+            <li><a href="#logistics" class="nav-link">Logistics</a></li>
+            <li><a href="#contact" class="nav-link">Order Desk</a></li>
+            <li><a href="founder.html" class="nav-link">Founder</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right WhatsApp CTA -->
+        <div class="header-cta-group">
+          <a href="https://wa.me/601165088912" target="_blank" rel="noopener noreferrer" class="btn-nav-primary">Order via WhatsApp &rarr;</a>
+        </div>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-drawer" id="mobile-drawer">
+        <a href="#about" onclick="closeMobileMenu()">About</a>
+        <a href="#menu" onclick="closeMobileMenu()">Menu</a>
+        <a href="#logistics" onclick="closeMobileMenu()">Logistics</a>
+        <a href="#contact" onclick="closeMobileMenu()">Order Desk</a>
+        <a href="founder.html" onclick="closeMobileMenu()">Founder</a>
+        <a href="https://wa.me/601165088912" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" style="color: var(--accent-emerald-dark); font-weight: 600;">Order via WhatsApp &rarr;</a>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+         B. HERO SECTION (#hero)
+         ========================================================================== -->
+    <main>
+      <section class="hero-section" id="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <span class="kicker-badge">NOCTURNAL SNACK INFRASTRUCTURE</span>
+            <h1 class="hero-headline">
+              Late-Night Cravings.<br>
+              <em>Curated</em> on Demand.
+            </h1>
+            <p class="hero-subheadline">
+              We don't speculate on cravings. We execute on demand. Premium Ice Gem and Choco Bear biscuits sealed in food-grade stand-up ziplock pouches—delivered directly to your hostel room from 8:00 PM to 1:00 AM.
+            </p>
+
+            <div class="hero-jump-links">
+              <a href="#menu" class="jump-link">
+                <span>View Tonight's Menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="jump-link">
+                <span>Direct WhatsApp Desk</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-visual-card">
+            <img src="Breakout_Bites_Studio_logo_design_2K_20260912230154.png" alt="Breakout Bites Studio Logo Banner" class="hero-banner-img">
+            <div class="hero-meta-bar">
+              <div class="hero-meta-item">
+                <span class="meta-label">Active Window</span>
+                <span class="meta-val">20:00 – 01:00 MYT</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="meta-label">Campus Dispatch</span>
+                <span class="meta-val">Siswa Door / Surau Point</span>
+                <span class="meta-detail">Belakang Surau (Container Checkpoint)</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="meta-label">Preservation</span>
+                <span class="meta-val">Ziplock Pouch</span>
+                <span class="meta-detail">Food-Grade Stand-Up Seal</span>
+              </div>
+              <div class="hero-meta-item">
+                <span class="meta-label">Payment Standard</span>
+                <span class="meta-val">DuitNow QR / Instant Cashless</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           C. THE CAMPUS PROBLEM & MISSION (#about)
+           ========================================================================== -->
+      <section class="about-section" id="about">
+        <div class="container">
+          <div class="about-split">
+            <div class="about-lead">
+              <span class="section-eyebrow">// PROBLEM & MISSION</span>
+              <h2 class="about-headline">Solving the Midnight Campus Void.</h2>
+            </div>
+
+            <div class="about-body">
+              <!-- The Friction Block -->
+              <div class="editorial-block">
+                <div class="block-header">
+                  <span class="block-tag tag-friction">The Friction</span>
+                  <h3 class="block-title">The 11:00 PM Cafe Shutter</h3>
+                </div>
+                <p class="block-text">
+                  The campus cafe shutters strictly at 11:00 PM, leaving midnight study pods stranded. Food delivery aggregators impose RM6–RM8 surge fees, while loose store snacks go soft and soggy in coastal hostel humidity. Late-night focus demands immediate, reliable sustenance without unreasonable delivery markups.
+                </p>
+              </div>
+
+              <!-- The Solution Block -->
+              <div class="editorial-block">
+                <div class="block-header">
+                  <span class="block-tag tag-craft">The Solution</span>
+                  <h3 class="block-title">The Sealed Standard</h3>
+                </div>
+                <p class="block-text">
+                  Breakout Bites eliminates kitchen prep chaos by sourcing high-demand confectionery in bulk, inspecting and portioning each batch under strict hygiene standards, and seal them into food-grade stand-up ziplock pouches so the crunch stays completely locked in. Maximum crunch preservation, zero aggregator markups, and rapid hostel handoffs.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           D. MENU & COMBOS (#menu)
+           ========================================================================== -->
+      <section class="products-section" id="menu">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">// CURATED STUDY FUEL</span>
+            <h2 class="section-title">Menu & Bundles</h2>
+            <p class="section-subtitle">Bulk-sourced, hygienically portioned, and sealed in food-grade stand-up ziplock pouches for peak revision crunch.</p>
+          </div>
+
+          <div class="products-grid">
+            <!-- Card 1: Ice Gem Biscuits (BB-01) -->
+            <div class="product-card">
+              <div>
+                <div class="card-kicker">
+                  <span class="item-code">ITEM // BB-01</span>
+                  <span class="badge-pill badge-flagship">Nostalgic Crunch</span>
+                </div>
+                <div class="card-body">
+                  <h3 class="product-name">Ice Gem Biscuits</h3>
+                  <p class="product-desc">
+                    Crunchy bite-sized biscuits topped with nostalgic, colorful spun-sugar pastel icing. Sourced in bulk, hygienically portioned, and sealed in food-grade stand-up ziplock pouches.
+                  </p>
+                  <ul class="spec-list">
+                    <li class="spec-item"><span class="spec-bullet"></span> 140g Food-Grade Stand-Up Ziplock Pouch</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> Classic pastel spun-sugar crown</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> Moisture-lock seal</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-block">
+                  <span class="price-label">Price</span>
+                  <span class="price-value">RM 4.00</span>
+                </div>
+                <button class="btn-card-action" onclick="openOrderModal('Ice Gem Biscuits (140g Pouch - RM 4.00)')">
+                  <span>Order Pouch</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2: Choco Bear Biscuits (BB-02) -->
+            <div class="product-card">
+              <div>
+                <div class="card-kicker">
+                  <span class="item-code">ITEM // BB-02</span>
+                  <span class="badge-pill">Rich Chocolate</span>
+                </div>
+                <div class="card-body">
+                  <h3 class="product-name">Choco Bear Biscuits</h3>
+                  <p class="product-desc">
+                    Crisp, bear-shaped golden biscuits filled with a rich, smooth chocolate cream center. High-indulgence late-night sugar boost.
+                  </p>
+                  <ul class="spec-list">
+                    <li class="spec-item"><span class="spec-bullet"></span> 140g Food-Grade Stand-Up Ziplock Pouch</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> Smooth chocolate cream core</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> Crisp golden biscuit shell</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-block">
+                  <span class="price-label">Price</span>
+                  <span class="price-value">RM 4.50</span>
+                </div>
+                <button class="btn-card-action" onclick="openOrderModal('Choco Bear Biscuits (140g Pouch - RM 4.50)')">
+                  <span>Order Pouch</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 3: The Breakout Duo Pack (BB-DUO) -->
+            <div class="product-card">
+              <div>
+                <div class="card-kicker">
+                  <span class="item-code">BUNDLE // BB-DUO</span>
+                  <span class="badge-pill badge-flagship">Best Value Bundle</span>
+                </div>
+                <div class="card-body">
+                  <h3 class="product-name">The Breakout Duo Pack</h3>
+                  <p class="product-desc">
+                    1x Ice Gem Pouch + 1x Choco Bear Pouch bundle. The complete revision sweet & chocolate survival pack.
+                  </p>
+                  <ul class="spec-list">
+                    <li class="spec-item"><span class="spec-bullet"></span> 1x Ice Gem Food-Grade Stand-Up Ziplock Pouch (140g)</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> 1x Choco Bear Food-Grade Stand-Up Ziplock Pouch (140g)</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> Full revision sweet & chocolate combo (Saves RM 0.50)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="price-block">
+                  <span class="price-label">Bundle Price</span>
+                  <span class="price-value">RM 8.00</span>
+                </div>
+                <button class="btn-card-action" onclick="openOrderModal('The Breakout Duo Pack (2x Pouches - RM 8.00)')">
+                  <span>Select Bundle</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           E. CAMPUS LOGISTICS (#logistics)
+           ========================================================================== -->
+      <section class="logistics-section" id="logistics">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 2.5rem;">
+            <span class="section-eyebrow">// CAMPUS DISTRIBUTION</span>
+            <h2 class="section-title">Direct Delivery Standards</h2>
+            <p class="section-subtitle">Punctual hostel distribution engineered for zero friction and maximum convenience.</p>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-cell">
+              <span class="metric-top">Operating Window</span>
+              <span class="metric-big">8PM–1AM</span>
+              <p class="metric-caption">Synced strictly with peak revision blocks and deadline crunch.</p>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-top">Siswa Dispatch</span>
+              <span class="metric-big">&lt; 10 Min</span>
+              <p class="metric-caption">Rapid room-to-room delivery across male residential blocks without leaving your desk.</p>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-top">Siswi Coordination</span>
+              <span class="metric-big">Surau Drop</span>
+              <p class="metric-caption">Strict hostel policy compliance: coordinated dispatch handoffs behind the Surau (Container checkpoint).</p>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-top">Aggregator Markup</span>
+              <span class="metric-big">RM 0.00</span>
+              <p class="metric-caption">Zero delivery surge fees, platform commissions, or inflated markups.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           F. DIRECT WHATSAPP ORDER DESK & CHANNELS (#contact)
+           ========================================================================== -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-eyebrow">// DIRECT COMMERCE HUB</span>
+            <h2 class="section-title">Order Desk & Community Channels</h2>
+            <p class="section-subtitle">Direct WhatsApp dispatch for late-night hostel orders, cashless payment, and community updates.</p>
+          </div>
+
+          <div class="contact-grid">
+            <!-- Column 1: WhatsApp Business Order Desk -->
+            <div class="flagship-card">
+              <div>
+                <div class="flagship-header">
+                  <div class="wa-badge-icon" aria-hidden="true">
+                    <!-- WhatsApp Inline SVG -->
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                    </svg>
+                  </div>
+                  <div class="flagship-heading-group">
+                    <span class="flagship-status">
+                      <span class="pulse-dot"></span> Active Order Portal
+                    </span>
+                    <h3 class="flagship-title">Direct WhatsApp Order Desk</h3>
+                  </div>
+                </div>
+
+                <p class="flagship-description">
+                  Browse the live product catalog, complete cashless payment via DuitNow QR, and coordinate immediate room dispatch.
+                </p>
+
+                <div class="hours-block">
+                  <div class="hours-title">Operational Window</div>
+                  <div class="hours-detail">Open Daily • 8:00 PM – 1:00 AM</div>
+                  <div class="hours-note">Pre-orders accepted throughout the day for prioritized evening batch slots.</div>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://wa.me/601165088912" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-action">Open WhatsApp Chat</a>
+                <div class="copy-order-hint">
+                  <span>Fast format:</span>
+                  <button class="copy-btn" onclick="copyTemplate()">Copy Order Template</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Column 2: Media & Community Directory -->
+            <div class="media-directory">
+              <!-- Channel 1: TikTok -->
+              <div class="media-card">
+                <div class="media-card-top">
+                  <div class="media-icon-wrap" aria-hidden="true">
+                    <!-- TikTok Inline SVG -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                    </svg>
+                  </div>
+                  <div class="media-info">
+                    <span class="media-platform">TIKTOK // @BRBTSTUDIO</span>
+                    <h4 class="media-title">Official Media Feed</h4>
+                    <p class="media-subtitle">Operational packaging highlights, batch preparation overviews, and official venture updates.</p>
+                  </div>
+                </div>
+                <a href="https://www.tiktok.com/@brbtstudio?_r=1&_t=ZS-99WoKMwhgBu" target="_blank" rel="noopener noreferrer" class="social-card-link">View TikTok Channel &rarr;</a>
+              </div>
+
+              <!-- Channel 2: Instagram -->
+              <div class="media-card">
+                <div class="media-card-top">
+                  <div class="media-icon-wrap" aria-hidden="true">
+                    <!-- Instagram Inline SVG -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                  </div>
+                  <div class="media-info">
+                    <span class="media-platform">INSTAGRAM // @BREAKOUTBITES911</span>
+                    <h4 class="media-title">Official Dispatch &amp; Notices</h4>
+                    <p class="media-subtitle">Real-time batch availability, operational schedules, catalog updates, and campus fulfillment announcements.</p>
+                  </div>
+                </div>
+                <a href="https://www.instagram.com/breakoutbites911?stkn=Y2duZm92MzBsZTJv" target="_blank" rel="noopener noreferrer" class="social-card-link">Follow Instagram &rarr;</a>
+              </div>
+
+              <!-- Channel 3: Facebook -->
+              <div class="media-card">
+                <div class="media-card-top">
+                  <div class="media-icon-wrap" aria-hidden="true">
+                    <!-- Facebook Inline SVG -->
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                  </div>
+                  <div class="media-info">
+                    <span class="media-platform">FACEBOOK // BREAKOUT BITES STUDIO</span>
+                    <h4 class="media-title">Campus Noticeboard</h4>
+                    <p class="media-subtitle">General announcements, batch schedules, and institutional communication for campus student housing.</p>
+                  </div>
+                </div>
+                <a href="https://www.facebook.com/share/1EnmmYA3Ae/" target="_blank" rel="noopener noreferrer" class="social-card-link">Visit Facebook Page &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================================================
+           G. ABOUT THE FOUNDER TEASER (#founder)
+           ========================================================================== -->
+      <section class="founder-section" id="founder">
+        <div class="container">
+          <div class="founder-teaser-card">
+            <div class="founder-teaser-content">
+              <span class="founder-teaser-eyebrow">// FOUNDER PROFILE</span>
+              <h2 class="founder-teaser-headline">Crafted &amp; Operated by Mohamad Aris Ashman</h2>
+              <p class="founder-teaser-subtitle">
+                Accounting student, market enthusiast, and builder. Discover the operational principles and background behind Breakout Bites Studio.
+              </p>
+            </div>
+            <div class="founder-teaser-action">
+              <a href="founder.html" class="btn-teaser-dossier">
+                <span>Read Founder Dossier</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========================================================================
+       H. FOOTER
+       ========================================================================== -->
+    <footer class="institutional-footer">
+      <div class="container">
+        <div class="footer-top-grid">
+          <!-- Brand Column -->
+          <div class="footer-brand-col">
+            <img src="Breakout_Bites_Studio_logo_design_2K_20260912230154.png" alt="Breakout Bites Studio Logo" class="footer-logo">
+            <p class="footer-tagline">Breakout Bites Studio — Premium Campus Social Commerce.</p>
+            <p class="footer-desc">
+              Curated biscuit confectionery delivering crisp study fuel sealed in food-grade stand-up ziplock pouches directly to residential student communities in Bandar Penawar.
+            </p>
+            <div class="footer-social-row">
+              <a href="https://wa.me/601165088912" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="WhatsApp Order Desk" aria-label="WhatsApp Order Desk">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-5.805 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+              </a>
+              <a href="https://www.tiktok.com/@brbtstudio?_r=1&_t=ZS-99WoKMwhgBu" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="TikTok Channel" aria-label="TikTok Channel">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/breakoutbites911?stkn=Y2duZm92MzBsZTJv" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Instagram Page" aria-label="Instagram Page">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+              <a href="https://www.facebook.com/share/1EnmmYA3Ae/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Facebook Page" aria-label="Facebook Page">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Navigation Column -->
+          <div class="footer-nav-col">
+            <div class="footer-nav-title">Venture Directory</div>
+            <ul class="footer-links-grid">
+              <li><a href="#about">About Mission</a></li>
+              <li><a href="#menu">Menu &amp; Bundles</a></li>
+              <li><a href="#logistics">Delivery Logistics</a></li>
+              <li><a href="founder.html">About Founder</a></li>
+              <li><a href="https://wa.me/601165088912" target="_blank" rel="noopener noreferrer">WhatsApp Desk &rarr;</a></li>
+              <li><a href="https://www.tiktok.com/@brbtstudio?_r=1&_t=ZS-99WoKMwhgBu" target="_blank" rel="noopener noreferrer">TikTok Media &rarr;</a></li>
+              <li><a href="https://www.instagram.com/breakoutbites911?stkn=Y2duZm92MzBsZTJv" target="_blank" rel="noopener noreferrer">Instagram Dispatch &rarr;</a></li>
+              <li><a href="https://www.facebook.com/share/1EnmmYA3Ae/" target="_blank" rel="noopener noreferrer">Facebook Noticeboard &rarr;</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Hairline Strip -->
+        <div class="footer-bottom-strip">
+          <p>© 2026 Breakout Bites Studio. All rights reserved. Bandar Penawar, Johor, Malaysia.</p>
+          <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-light);">
+            DIRECT-TO-DORM CAMPUS COMMERCE
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Order Configuration Modal -->
+    <div class="modal-backdrop" id="order-modal" onclick="closeOrderModal(event)">
+      <div class="modal-box" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeOrderModal()" aria-label="Close Modal">&times;</button>
+        <span class="section-eyebrow">// DIRECT WHATSAPP CHECKOUT</span>
+        <h3 class="modal-title" id="modal-product-title">Dispatch Order</h3>
+        <p class="modal-desc">Configure your hostel room coordinates or pickup point. For Siswi orders, delivery handoff is strictly designated behind the Surau (Container checkpoint). Clicking continue routes directly to WhatsApp with pre-formatted order telemetry.</p>
+
+        <form onsubmit="handleOrderSubmit(event)">
+          <div class="modal-input-group">
+            <label for="order-selection">Selected Item</label>
+            <select id="order-selection">
+              <option value="Ice Gem Biscuits (140g Pouch - RM 4.00)">Ice Gem Biscuits (140g Pouch - RM 4.00)</option>
+              <option value="Choco Bear Biscuits (140g Pouch - RM 4.50)">Choco Bear Biscuits (140g Pouch - RM 4.50)</option>
+              <option value="The Breakout Duo Pack (2x Pouches - RM 8.00)">The Breakout Duo Pack (2x Pouches - RM 8.00)</option>
+            </select>
+          </div>
+
+          <div class="modal-input-group">
+            <label for="order-quantity">Quantity (Pouches / Bundles)</label>
+            <select id="order-quantity">
+              <option value="1 Pouch / Bundle">1 Pouch</option>
+              <option value="2 Pouches / Bundles">2 Pouches</option>
+              <option value="3 Pouches / Bundles">3 Pouches</option>
+              <option value="4 Pouches / Bundles (Study Pod Pack)">4 Pouches (Study Pod Pack)</option>
+            </select>
+          </div>
+
+          <div class="modal-input-group">
+            <label for="order-dorm">Hostel Block & Room / Pickup Point</label>
+            <input type="text" id="order-dorm" placeholder="e.g., Siswa Blok B-204 or Siswi (Belakang Surau / Container)" required>
+          </div>
+
+          <button type="submit" class="wa-button-primary" style="margin-top: 1rem;">
+            <span>Transmit to WhatsApp Runner</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div class="toast" id="toast">Copied order template to clipboard!</div>
+  </div>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script>
+    // Mobile Drawer Toggle
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+
+    mobileToggle.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('open');
+    });
+
+    function closeMobileMenu() {
+      mobileDrawer.classList.remove('open');
+    }
+
+    // Modal Operations
+    const modalBackdrop = document.getElementById('order-modal');
+    const modalProductTitle = document.getElementById('modal-product-title');
+    const orderSelection = document.getElementById('order-selection');
+    const orderDorm = document.getElementById('order-dorm');
+    const orderQuantity = document.getElementById('order-quantity');
+
+    function openOrderModal(itemName) {
+      modalProductTitle.textContent = itemName;
+      orderSelection.value = itemName;
+      modalBackdrop.classList.add('active');
+      setTimeout(() => orderDorm.focus(), 100);
+    }
+
+    function closeOrderModal(event) {
+      modalBackdrop.classList.remove('active');
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const item = orderSelection.value;
+      const qty = orderQuantity.value;
+      const room = orderDorm.value.trim();
+
+      const message = `Hello Breakout Bites Studio!%0A%0AI would like to place an order:%0A- Item: ${encodeURIComponent(item)}%0A- Quantity: ${encodeURIComponent(qty)}%0A- Delivery Location: ${encodeURIComponent(room)}%0A- Packaging: Food-Grade Stand-Up Ziplock Pouch%0A- Payment Method: DuitNow QR%0A%0APlease confirm availability and runner dispatch.`;
+      
+      const whatsappUrl = `https://wa.me/601165088912?text=${message}`;
+      window.open(whatsappUrl, '_blank');
+      closeOrderModal();
+    }
+
+    // Copy Fast Order Template
+    function copyTemplate() {
+      const template = "Halo Breakout Bites Studio!\nSaya nak order:\n- Item: Ice Gem / Choco Bear / Duo Pack\n- Kuantiti: 1\n- Lokasi Hantar: [Contoh: Blok B Bilik 204 / Belakang Surau (Container)]\n- Bayaran: DuitNow QR";
+      navigator.clipboard.writeText(template).then(() => {
+        showToast("Template copied to clipboard!");
+      }).catch(() => {
+        showToast("Order template copied.");
+      });
+    }
+
+    function showToast(text) {
+      const toast = document.getElementById('toast');
+      toast.textContent = text;
+      toast.classList.add('visible');
+      setTimeout(() => {
+        toast.classList.remove('visible');
+      }, 3000);
+    }
+
+    // Escape Key to Close Modal
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalBackdrop.classList.contains('active')) {
+        closeOrderModal();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Breakout Bites Studio // Pitch Deck (ETR 2583)</title>
+  <meta name="description" content="Breakout Bites Studio Executive Presentation Deck - ETR 2583 E-Entrepreneurship. Presenter: Mohamad Aris Ashman Bin Sharin (PDA-2502-024, DIA 4B).">
+  <link rel="icon" type="image/png" href="App_icon_lettermark_Breakout_Bites_2K_20260912230211.png">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-base: #0A0D14;
+      --bg-surface: rgba(14, 18, 28, 0.85);
+      --bg-surface-elevated: rgba(20, 26, 42, 0.94);
+      --border-glow: rgba(0, 229, 255, 0.28);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      
+      --cyan-core: #00E5FF;
+      --cyan-glow: rgba(0, 229, 255, 0.45);
+      --cyan-dim: rgba(0, 229, 255, 0.12);
+      
+      --emerald-core: #10B981;
+      --emerald-glow: rgba(16, 185, 129, 0.4);
+      --emerald-dim: rgba(16, 185, 129, 0.12);
+      
+      --amber-core: #F59E0B;
+      --amber-glow: rgba(245, 158, 11, 0.4);
+      --amber-dim: rgba(245, 158, 11, 0.12);
+
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      
+      --font-display: 'Outfit', 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      max-width: 100vw;
+      max-height: 100vh;
+      margin: 0;
+      padding: 0;
+      overflow: hidden !important; /* Strictly forbid window-level scrolling */
+      box-sizing: border-box;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      user-select: none;
+    }
+
+    /* Ambient Background Effects */
+    .ambient-mesh {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: 
+        radial-gradient(circle at 15% 20%, rgba(0, 229, 255, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(16, 185, 129, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(10, 14, 24, 0.95) 0%, #0A0D14 100%);
+    }
+
+    .telemetry-grid {
+      position: fixed;
+      inset: 0;
+      background-size: 50px 50px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Top Global Progress Bar */
+    .top-progress-track {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: 1000;
+      transition: opacity 0.3s ease;
+    }
+
+    .top-progress-bar {
+      height: 100%;
+      width: 14.28%;
+      background: linear-gradient(90deg, var(--cyan-core), var(--emerald-core));
+      box-shadow: 0 0 10px var(--cyan-glow);
+      transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ==========================================================================
+       TOP HEADER NAVIGATION (CLEAN 3-ZONE LAYOUT)
+       ========================================================================== */
+    .top-hud {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 58px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      box-sizing: border-box;
+      background: rgba(10, 13, 20, 0.7);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 229, 255, 0.12);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    /* Zone 1: Left HUD Brand */
+    .top-hud-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .hud-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .hud-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      object-fit: cover;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
+      background: #111726;
+    }
+
+    .hud-titles {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hud-name {
+      font-family: var(--font-display);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hud-name span {
+      color: var(--cyan-core);
+    }
+
+    .hud-sub {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* Zone 2: Center Slide Pill (Guaranteed Full Text Visibility) */
+    .top-hud-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 2;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .slide-title-pill {
+      white-space: nowrap !important;
+      overflow: visible !important;
+      text-overflow: clip !important;
+      padding: 6px 18px;
+      background: rgba(16, 22, 36, 0.85);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      border-radius: 20px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #FFFFFF;
+      letter-spacing: 0.03em;
+      box-shadow: 0 0 12px rgba(0, 229, 255, 0.1);
+    }
+
+    /* Zone 3: Right Action Buttons */
+    .top-hud-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .btn-top-action, .clean-mode-btn, .export-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glow);
+      color: var(--text-primary);
+      padding: 7px 14px;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-top-action:hover {
+      background: var(--cyan-dim);
+      border-color: var(--cyan-core);
+      color: var(--cyan-core);
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-top-action.active-mode {
+      background: rgba(0, 229, 255, 0.2);
+      border-color: var(--cyan-core);
+      color: var(--cyan-core);
+    }
+
+    .btn-top-action.pdf-accent {
+      background: linear-gradient(135deg, rgba(0, 229, 255, 0.18) 0%, rgba(16, 185, 129, 0.18) 100%);
+      border-color: var(--cyan-core);
+    }
+
+    .btn-top-action.pdf-accent:hover {
+      background: linear-gradient(135deg, var(--cyan-core) 0%, var(--emerald-core) 100%);
+      color: #07090E;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    }
+
+    /* Title Slide Transition: Brand and title pill gracefully hidden on Slide 1 */
+    .top-hud.is-title-slide .top-hud-left,
+    .top-hud.is-title-slide .top-hud-center {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-4px);
+    }
+
+    /* ==========================================================================
+       FLOATING BOTTOM-LEFT AUDIO CYBER-DOCK
+       ========================================================================== */
+    .hud-audio-player {
+      position: fixed;
+      bottom: 18px;
+      left: 24px;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 12px;
+      background: rgba(13, 18, 30, 0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      user-select: none;
+    }
+
+    .hud-audio-player:hover {
+      border-color: rgba(0, 229, 255, 0.45);
+      box-shadow: 0 0 16px rgba(0, 229, 255, 0.25);
+    }
+
+    /* Compact Track Info */
+    .audio-track-info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 140px;
+    }
+
+    .audio-equalizer-bars {
+      display: inline-flex;
+      align-items: flex-end;
+      gap: 2px;
+      height: 12px;
+      width: 10px;
+      flex-shrink: 0;
+    }
+
+    .audio-equalizer-bars .bar {
+      width: 2px;
+      height: 100%;
+      background: var(--cyan-core);
+      border-radius: 1px;
+      animation: eqBounce 0.8s ease-in-out infinite alternate;
+      transform-origin: bottom;
+    }
+
+    .audio-equalizer-bars .bar:nth-child(1) { animation-duration: 0.7s; height: 60%; }
+    .audio-equalizer-bars .bar:nth-child(2) { animation-duration: 0.45s; height: 100%; }
+    .audio-equalizer-bars .bar:nth-child(3) { animation-duration: 0.85s; height: 50%; }
+
+    .audio-equalizer-bars.paused .bar {
+      animation-play-state: paused !important;
+      transform: scaleY(0.25) !important;
+      opacity: 0.4;
+    }
+
+    @keyframes eqBounce {
+      0% { transform: scaleY(0.2); }
+      50% { transform: scaleY(1); }
+      100% { transform: scaleY(0.3); }
+    }
+
+    .track-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #E2E8F0;
+      font-size: 0.70rem;
+    }
+
+    /* Audio Controls */
+    .audio-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .audio-btn {
+      background: transparent;
+      border: none;
+      color: #00E5FF;
+      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 2px 4px;
+      transition: transform 0.1s ease, color 0.1s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .audio-btn:hover {
+      transform: scale(1.15);
+      color: #FFFFFF;
+    }
+
+    .audio-btn.active {
+      color: #10B981;
+      text-shadow: 0 0 8px #10B981;
+    }
+
+    /* Compact Volume Control */
+    .audio-volume-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .vol-icon {
+      font-size: 0.75rem;
+      cursor: pointer;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .cyber-slider {
+      width: 55px;
+      height: 4px;
+      accent-color: #00E5FF;
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      outline: none;
+    }
+
+    .cyber-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00E5FF;
+      cursor: pointer;
+      box-shadow: 0 0 6px #00E5FF;
+    }
+
+    .cyber-slider::-moz-range-thumb {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #00E5FF;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 0 6px #00E5FF;
+    }
+
+    .vol-label {
+      font-size: 0.65rem;
+      color: #94A3B8;
+      min-width: 26px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Presentation Clean Mode ('H') */
+    body.clean-mode .top-hud,
+    body.clean-mode .hud-audio-player,
+    body.clean-mode .deck-controls-dock,
+    body.clean-mode .top-progress-track {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateY(10px) !important;
+    }
+
+    body.clean-mode .top-hud {
+      transform: translateY(-10px) !important;
+    }
+
+    /* Deck Master Container */
+    .deck-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      z-index: 10;
+    }
+
+    /* Slides Standard Layout (Strict Zero-Scrollport & High-Speed Fade) */
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      max-height: 100vh;
+      padding: 72px 2.5rem 3.5rem 2.5rem; /* 72px top padding ensures slide content begins safely below the HUD bar (56px) with zero collision */
+      box-sizing: border-box;
+      display: none; /* Managed by active state to prevent ghosting */
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      overflow: hidden !important; /* Zero slide scrollbars */
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .slide.active {
+      display: flex !important;
+      opacity: 1;
+      z-index: 10;
+      animation: slideFadeIn 0.15s ease-in-out;
+    }
+
+    @keyframes slideFadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    #slide-1 {
+      padding: 1.5rem 2.5rem 3.5rem 2.5rem !important;
+      justify-content: center !important;
+    }
+
+    #slide-1 .slide-inner {
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    .slide-inner, .slide-content {
+      width: 100%;
+      max-width: 1380px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+    }
+
+    /* Slide Typography Helpers - Strict Normal Document Flow */
+    .badge-label {
+      display: inline-block;
+      position: static !important;
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.10em;
+      padding: 3px 9px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      width: fit-content;
+      box-sizing: border-box;
+    }
+
+    .badge-cyan {
+      background: var(--cyan-dim);
+      color: var(--cyan-core);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+    }
+
+    .badge-amber {
+      background: var(--amber-dim);
+      color: var(--amber-core);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .badge-emerald {
+      background: var(--emerald-dim);
+      color: var(--emerald-core);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .slide-headline {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+
+    .slide-headline span.highlight {
+      background: linear-gradient(135deg, #00E5FF 0%, #10B981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .slide-description {
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      max-width: 900px;
+      margin-bottom: 20px;
+    }
+
+    /* Glassmorphic Cards */
+    .glass-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glow);
+      border-radius: 12px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .glass-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.4), transparent);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(0, 229, 255, 0.55);
+      box-shadow: 0 10px 32px rgba(0, 229, 255, 0.12);
+    }
+
+    /* ==========================================================================
+       SLIDE 1: MISSION CONTROL (CENTERED TITLE & BENCHMARK CREDENTIALS)
+       ========================================================================== */
+    #slide-1 {
+      padding: 40px 48px;
+    }
+
+    #slide-1 .slide-inner {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero-banner-wrapper {
+      width: 100%;
+      max-width: 680px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: auto;
+      max-height: 195px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 32px rgba(0, 229, 255, 0.35));
+    }
+
+    .hero-tagline-quote {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      margin-bottom: 26px;
+      text-align: center;
+    }
+
+    .hero-tagline-quote span {
+      color: var(--cyan-core);
+    }
+
+    /* Clean Presenter Credentials Card */
+    .presenter-benchmark-card {
+      background: rgba(14, 19, 32, 0.88);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      border-radius: 12px;
+      padding: 16px 28px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 780px;
+      backdrop-filter: blur(14px);
+      margin: 0 auto;
+    }
+
+    .presenter-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .presenter-key {
+      font-family: var(--font-mono);
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .presenter-val.name {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: 0.04em;
+    }
+
+    .presenter-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 8px;
+      width: 100%;
+    }
+
+    .presenter-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .presenter-val.mono {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan-core);
+    }
+
+    .presenter-val.course {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .presenter-divider {
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 0.8rem;
+    }
+
+    /* ==========================================================================
+       SLIDE 2: THE FRICTION POINT
+       ========================================================================== */
+    .friction-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      width: 100%;
+      align-items: stretch;
+    }
+
+    .telemetry-metrics-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .metric-card {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(16, 22, 36, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+    }
+
+    .metric-card.alert {
+      border-color: rgba(245, 158, 11, 0.35);
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.08) 0%, rgba(16, 22, 36, 0.9) 100%);
+    }
+
+    .metric-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--amber-core);
+      flex-shrink: 0;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .metric-data-wrap {
+      flex: 1;
+    }
+
+    .metric-num {
+      font-family: var(--font-mono);
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .metric-num.amber { color: var(--amber-core); }
+    .metric-num.cyan { color: var(--cyan-core); }
+
+    .metric-label {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .friction-synthesis-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-color: rgba(245, 158, 11, 0.3);
+      background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, rgba(14, 18, 28, 0.95) 80%);
+    }
+
+    .problem-callout {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.35;
+      margin-bottom: 14px;
+    }
+
+    .problem-points-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .problem-point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.35;
+    }
+
+    .problem-point-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--amber-core);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       SLIDE 3: HERO PRODUCT ARCHITECTURE
+       ========================================================================== */
+    .products-split-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .product-core-card {
+      padding: 22px;
+      border-color: rgba(0, 229, 255, 0.35);
+      background: linear-gradient(135deg, rgba(0, 229, 255, 0.06) 0%, rgba(14, 18, 28, 0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .product-title {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 3px;
+    }
+
+    .product-subtitle {
+      font-size: 0.85rem;
+      color: var(--cyan-core);
+      font-family: var(--font-mono);
+      margin-bottom: 12px;
+    }
+
+    .engineering-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .spec-item {
+      background: rgba(8, 12, 20, 0.7);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 8px;
+      padding: 8px 10px;
+    }
+
+    .spec-item-key {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .spec-item-val {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-top: 2px;
+    }
+
+    .product-cross-card {
+      padding: 22px;
+      border-color: rgba(16, 185, 129, 0.35);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.06) 0%, rgba(14, 18, 28, 0.92) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cross-title {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 3px;
+    }
+
+    .cross-subtitle {
+      font-size: 0.82rem;
+      color: var(--emerald-core);
+      font-family: var(--font-mono);
+      margin-bottom: 12px;
+    }
+
+    /* ==========================================================================
+       SLIDE 4: EXACT OSTERWALDER 9-BOX BUSINESS MODEL CANVAS (FIT-TO-WINDOW)
+       ========================================================================== */
+    #slide-4 {
+      padding: 60px 2.2rem 22px 2.2rem !important;
+    }
+
+    #slide-4 .slide-inner {
+      max-width: 1440px;
+      height: 100%;
+      justify-content: flex-start;
+      padding-top: 0;
+    }
+
+    .bmc-canvas {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.22fr 1fr 1fr;
+      grid-template-rows: 1.05fr 1.05fr 0.9fr;
+      grid-template-areas:
+        "kp ka vp cr cs"
+        "kp kr vp ch cs"
+        "cost cost cost rev rev";
+      gap: 8px;
+      width: 100%;
+      height: calc(100vh - 145px);
+      max-height: 680px;
+      box-sizing: border-box;
+    }
+
+    .bmc-card, .bmc-box {
+      padding: 8px 10px !important;
+      background: rgba(16, 22, 36, 0.9);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      box-sizing: border-box;
+      overflow: hidden !important;
+      backdrop-filter: blur(12px);
+    }
+
+    .box-kp   { grid-area: kp; }   /* Key Partners (Full height of top section) */
+    .box-ka   { grid-area: ka; }   /* Key Activities (Top half) */
+    .box-kr   { grid-area: kr; }   /* Key Resources (Bottom half) */
+    .box-vp   { 
+      grid-area: vp; 
+      border: 1.5px solid rgba(0, 240, 255, 0.5) !important; 
+      box-shadow: 0 0 15px rgba(0, 240, 255, 0.15) !important;
+      background: rgba(0, 240, 255, 0.05);
+    } /* Value Propositions (Center Hero, Full height) */
+    .box-cr   { grid-area: cr; }   /* Customer Relationships (Top half) */
+    .box-ch   { grid-area: ch; }   /* Channels (Bottom half) */
+    .box-cs   { grid-area: cs; }   /* Customer Segments (Full height of top section) */
+    .box-cost { grid-area: cost; border-color: rgba(245, 158, 11, 0.35); } /* Cost Structure */
+    .box-rev  { grid-area: rev; border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.05); }  /* Revenue Streams */
+
+    .bmc-card .card-header, 
+    .bmc-card h3, 
+    .bmc-box-header, 
+    .bmc-header {
+      font-size: 0.78rem !important;
+      font-weight: 700;
+      margin: 0 0 6px 0 !important;
+      color: #00F0FF;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 3px;
+    }
+
+    .bmc-box-header.amber { color: var(--amber-core) !important; }
+    .bmc-box-header.emerald { color: var(--emerald-core) !important; }
+
+    .bmc-card ul, .bmc-box-list {
+      margin: 0 !important;
+      padding-left: 12px !important;
+      list-style-type: disc !important;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .box-vp .bmc-box-list li {
+      line-height: 1.38 !important;
+    }
+
+    .cost-columns-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .bmc-card li, .bmc-box-list li {
+      font-size: 0.68rem !important;
+      line-height: 1.32 !important;
+      color: #D1D5DB;
+      position: static !important;
+      padding-left: 0 !important;
+    }
+
+    .bmc-card li::before, .bmc-box-list li::before {
+      display: none !important;
+    }
+
+    .bmc-card strong, .bmc-box-list strong {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       SLIDE 5: SOCIAL COMMERCE FUNNEL (FULL-BLEED 4-PILLAR ARCHITECTURE)
+       ========================================================================== */
+    .funnel-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      width: 100%;
+      height: calc(100vh - 240px);
+      max-height: 560px;
+      margin-top: 15px;
+      box-sizing: border-box;
+    }
+
+    .funnel-step-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 18px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden !important;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-glow);
+      border-radius: 12px;
+      backdrop-filter: blur(14px);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .funnel-step-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--cyan-core);
+    }
+
+    .funnel-stage-num {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      font-family: var(--font-mono);
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.04);
+      user-select: none;
+      line-height: 1;
+    }
+
+    .funnel-tier-top {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .funnel-platform-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .funnel-platform-title-wrap {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .funnel-platform-name {
+      font-family: var(--font-display);
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.2;
+    }
+
+    .funnel-phase-indicator {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      margin-top: 2px;
+      text-transform: uppercase;
+    }
+
+    .funnel-strategy-sub {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .funnel-step-desc {
+      font-size: 0.74rem;
+      line-height: 1.45;
+      color: #D1D5DB;
+    }
+
+    .funnel-mechanism-box {
+      background: rgba(0, 0, 0, 0.45);
+      border-left: 3px solid #00F0FF;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin-top: 4px;
+    }
+
+    .funnel-mechanism-label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+
+    .funnel-mechanism-text {
+      font-size: 0.73rem;
+      line-height: 1.38;
+      color: #F1F5F9;
+    }
+
+    .funnel-telemetry-footer {
+      border-radius: 8px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .funnel-telemetry-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .funnel-telemetry-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .funnel-telemetry-label {
+      font-family: var(--font-mono);
+      font-size: 0.56rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .funnel-telemetry-val {
+      font-family: var(--font-display);
+      font-size: 0.74rem;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       SLIDE 6: FINANCIAL TELEMETRY
+       ========================================================================== */
+    .finance-dashboard-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .cogs-breakdown-card {
+      padding: 22px;
+    }
+
+    .cogs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    .cogs-table th {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .cogs-table td {
+      padding: 9px 10px;
+      font-size: 0.86rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      color: var(--text-secondary);
+    }
+
+    .cogs-table td.cost-val {
+      font-family: var(--font-mono);
+      color: #FFFFFF;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .cogs-table tr.total-row td {
+      border-top: 1px solid rgba(0, 229, 255, 0.3);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .cogs-table tr.total-row td.cost-val {
+      color: var(--cyan-core);
+      font-size: 1.02rem;
+    }
+
+    .profit-telemetry-card {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-color: rgba(16, 185, 129, 0.35);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.07) 0%, rgba(14, 18, 28, 0.95) 100%);
+    }
+
+    .margin-hero-stat {
+      text-align: center;
+      padding: 16px 0;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 12px;
+      margin: 10px 0;
+    }
+
+    .margin-percent {
+      font-family: var(--font-mono);
+      font-size: 2.7rem;
+      font-weight: 900;
+      color: var(--emerald-core);
+      line-height: 1;
+      text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    }
+
+    .margin-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 4px;
+      font-family: var(--font-mono);
+    }
+
+    .batch-summary-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .batch-stat {
+      background: rgba(16, 22, 36, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 8px;
+      padding: 9px 11px;
+    }
+
+    .batch-stat-key {
+      font-family: var(--font-mono);
+      font-size: 0.64rem;
+      color: var(--text-muted);
+    }
+
+    .batch-stat-val {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-top: 2px;
+    }
+
+    /* ==========================================================================
+       SLIDE 7: BATCH 01 ROLLOUT
+       ========================================================================== */
+    .rollout-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .timeline-card {
+      padding: 22px;
+    }
+
+    .timeline-track {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 12px;
+      position: relative;
+    }
+
+    .timeline-step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .step-time-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(0, 229, 255, 0.12);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      color: var(--cyan-core);
+      width: 86px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+
+    .step-desc {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+      line-height: 1.35;
+    }
+
+    .action-dispatch-card {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-between;
+      border-color: rgba(0, 229, 255, 0.35);
+      background: radial-gradient(circle at 50% 30%, rgba(0, 229, 255, 0.08) 0%, rgba(14, 18, 28, 0.95) 80%);
+    }
+
+    .qr-container {
+      width: 140px;
+      height: 140px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.35);
+      margin: 8px 0;
+    }
+
+    .qr-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .dispatch-manifesto {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      line-height: 1.35;
+    }
+
+    .dispatch-manifesto span {
+      color: var(--cyan-core);
+    }
+
+    /* Persistent Bottom Navigation Controls */
+    .deck-controls-dock, .nav-controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-glow);
+      padding: 8px 18px;
+      border-radius: 9999px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      z-index: 500;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover:not(:disabled) {
+      background: var(--cyan-dim);
+      border-color: var(--cyan-core);
+      color: var(--cyan-core);
+      transform: scale(1.08);
+    }
+
+    .nav-btn:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .slide-counter {
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--cyan-core);
+      letter-spacing: 0.08em;
+      min-width: 78px;
+      text-align: center;
+    }
+
+    .dot-indicators {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .dot.active {
+      width: 22px;
+      border-radius: 9999px;
+      background: var(--cyan-core);
+      box-shadow: 0 0 8px var(--cyan-core);
+    }
+
+    /* ==========================================================================
+       CLEAN / PRESENTATION MODE (FOR SCREEN RECORDING - SHORTCUT: H)
+       ========================================================================== */
+    body.clean-mode .top-progress-track {
+      opacity: 0 !important;
+      pointer-events: none !important;
+    }
+
+    body.clean-mode .hud-header,
+    body.clean-mode .ui-hud {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateY(-20px) !important;
+    }
+
+    body.clean-mode .top-action-cluster,
+    body.clean-mode .nav-controls-top {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateY(-20px) !important;
+    }
+
+    body.clean-mode .deck-controls-dock,
+    body.clean-mode .nav-controls {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transform: translateX(-50%) translateY(80px) !important;
+    }
+
+    /* ==========================================================================
+       CALIBRATED ISO A4 LANDSCAPE PRINT SETUP (NO ZOOM-OUT, NO LETTERBOXING)
+       ========================================================================== */
+    @page {
+      size: 297mm 210mm;
+      margin: 0;
+    }
+
+    @media print {
+      *, *::before, *::after {
+        box-sizing: border-box !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      html, body {
+        width: 297mm !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #0A0D14 !important;
+        color: #FFFFFF !important;
+        overflow: visible !important;
+      }
+
+      /* Permanently hide all screen-only UI controls */
+      .hud-audio-player,
+      .top-hud,
+      .export-btn, 
+      .clean-mode-btn, 
+      .nav-controls, 
+      .nav-controls-top,
+      .top-action-cluster,
+      .ui-hud, 
+      .slide-counter, 
+      button, 
+      nav, 
+      .hide-ui-pill,
+      .recording-indicator,
+      .audio-indicator,
+      .top-progress-track,
+      .hud-header,
+      .deck-controls-dock,
+      .ambient-mesh,
+      .telemetry-grid {
+        display: none !important;
+      }
+
+      /* Exact A4 Landscape Slide Container */
+      .slide {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: center !important;
+        width: 297mm !important;
+        height: 210mm !important;
+        max-height: 210mm !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        margin: 0 !important;
+        padding: 10mm 15mm !important;
+        background: #0A0D14 !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      /* Expand content containers edge-to-edge */
+      .slide-content, 
+      .container, 
+      .hero-container, 
+      .deck-container,
+      .problem-container,
+      .finance-container,
+      .slide-inner {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        transform: none !important;
+      }
+
+      .deck-container {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+      }
+
+      /* Slide 1 Centering */
+      .slide:first-of-type {
+        justify-content: center !important;
+        text-align: center !important;
+      }
+
+      /* SLIDE 4 BMC: RIGID MILLIMETER GRID (PREVENTS PRINT ENGINE COLLAPSE) */
+      .bmc-canvas {
+        display: grid !important;
+        grid-template-columns: 50mm 50mm 60mm 50mm 50mm !important;
+        grid-template-rows: 58mm 58mm 44mm !important;
+        grid-template-areas:
+          "kp ka vp cr cs"
+          "kp kr vp ch cs"
+          "cost cost cost rev rev" !important;
+        gap: 3mm !important;
+        width: 267mm !important;
+        height: 163mm !important;
+        max-height: 165mm !important;
+        margin-top: 4mm !important;
+        position: relative !important;
+      }
+
+      .bmc-card, .bmc-box {
+        padding: 3mm 4mm !important;
+        overflow: hidden !important;
+        border-radius: 2mm !important;
+      }
+
+      .bmc-card .card-header, 
+      .bmc-card h3, 
+      .bmc-header, 
+      .bmc-box h3, 
+      .bmc-box-header {
+        font-size: 8pt !important;
+        margin-bottom: 2mm !important;
+      }
+
+      .bmc-card ul, .bmc-box-list {
+        padding-left: 4mm !important;
+        margin: 0 !important;
+      }
+
+      .bmc-card li, .bmc-box-list li {
+        font-size: 6.8pt !important;
+        line-height: 1.35 !important;
+        margin-bottom: 1.5mm !important;
+      }
+
+      .cost-columns-grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4mm !important;
+        width: 100% !important;
+      }
+
+      /* SLIDE 5 FUNNEL: RIGID PRINT COLUMNS */
+      .funnel-steps-grid, .slide-5-grid, .conversion-funnel-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 4mm !important;
+        width: 267mm !important;
+        height: 155mm !important;
+        margin-top: 5mm !important;
+      }
+      .funnel-step-card {
+        padding: 10px 8px !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+      }
+      .funnel-tier-top {
+        gap: 6px !important;
+      }
+      .funnel-platform-header {
+        gap: 8px !important;
+      }
+      .funnel-platform-header .app-icon-badge {
+        width: 32px !important;
+        height: 32px !important;
+      }
+      .funnel-platform-header .app-icon-badge svg {
+        width: 16px !important;
+        height: 16px !important;
+      }
+      .funnel-platform-name {
+        font-size: 0.76rem !important;
+      }
+      .funnel-phase-indicator {
+        font-size: 0.52rem !important;
+      }
+      .funnel-strategy-sub {
+        font-size: 0.58rem !important;
+      }
+      .funnel-step-desc {
+        font-size: 0.55rem !important;
+        line-height: 1.25 !important;
+      }
+      .funnel-mechanism-box {
+        padding: 5px 7px !important;
+        margin-top: 3px !important;
+      }
+      .funnel-mechanism-label {
+        font-size: 0.46rem !important;
+      }
+      .funnel-mechanism-text {
+        font-size: 0.52rem !important;
+        line-height: 1.2 !important;
+      }
+      .funnel-telemetry-footer {
+        padding: 6px 8px !important;
+        margin-top: 6px !important;
+        gap: 6px !important;
+      }
+      .funnel-telemetry-label {
+        font-size: 0.46rem !important;
+      }
+      .funnel-telemetry-val {
+        font-size: 0.58rem !important;
+        line-height: 1.2 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Backdrop -->
+  <div class="ambient-mesh"></div>
+  <div class="telemetry-grid"></div>
+
+  <!-- Top Progress Bar -->
+  <div class="top-progress-track">
+    <div class="top-progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- Unified Top HUD Navigation (Clean 3-Zone Architecture) -->
+  <header class="top-hud ui-hud" id="topHud">
+    <!-- Zone 1: Left HUD Brand -->
+    <div class="top-hud-left" id="topHudLeft">
+      <a href="#slide-1" class="hud-brand" onclick="goToSlide(1); return false;">
+        <img src="App_icon_lettermark_Breakout_Bites_2K_20260912230211.png" 
+             alt="Breakout Bites Icon" 
+             class="hud-avatar" 
+             onerror="this.onerror=null; this.src='App_icon_lettermark_Breakout_Bites_2K_20260912230211.jpg';">
+        <div class="hud-titles">
+          <div class="hud-name">BREAKOUT BITES <span>STUDIO</span></div>
+          <div class="hud-sub">ETR 2583 // E-ENTREPRENEURSHIP</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Zone 2: Center Slide Pill (Guaranteed Full Text Visibility) -->
+    <div class="top-hud-center" id="topHudCenter">
+      <div class="slide-title-pill" id="slideTitlePill">The Friction Point</div>
+    </div>
+
+    <!-- Zone 3: Right Action Buttons -->
+    <div class="top-hud-right" id="topHudRight">
+      <button class="btn-top-action clean-mode-btn" id="cleanModeBtn" title="Toggle Clean Presentation Mode for Recording (Shortcut: H)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+          <circle cx="12" cy="12" r="3"></circle>
+        </svg>
+        <span id="cleanModeBtnText">Hide UI (H)</span>
+      </button>
+
+      <button class="btn-top-action pdf-accent export-btn" id="exportPdfBtn" title="Print or Save as Landscape PDF (Shortcut: P)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>📄 Export PDF Deck</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Floating Bottom-Left Audio Cyber-Dock -->
+  <div class="hud-audio-player" id="audioPlayerWidget">
+    <div class="audio-track-info">
+      <span class="audio-equalizer-bars paused" id="eqBars">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </span>
+      <span class="track-title" id="trackTitleDisplay">Literature - Reina Ueda</span>
+    </div>
+    
+    <div class="audio-controls">
+      <button class="audio-btn" id="btnPrevTrack" title="Previous Track">⏮</button>
+      <button class="audio-btn play-btn" id="btnPlayPause" title="Play / Pause">▶</button>
+      <button class="audio-btn" id="btnNextTrack" title="Next Track">⏭</button>
+      <button class="audio-btn loop-btn" id="btnLoopTrack" title="Toggle Loop">🔁</button>
+    </div>
+
+    <div class="audio-volume-container">
+      <span class="vol-icon" id="volIcon" title="Toggle Mute">🔊</span>
+      <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.35" class="cyber-slider" title="Volume Slider">
+      <span class="vol-label" id="volumePercentage">35%</span>
+    </div>
+  </div>
+
+  <!-- Master Deck Container -->
+  <main class="deck-container">
+
+    <!-- =======================================================================
+         SLIDE 1: MISSION CONTROL (CENTERED TITLE & BENCHMARK CREDENTIALS)
+         ======================================================================= -->
+    <section class="slide active" id="slide-1" data-title="Mission Control">
+      <div class="slide-inner hero-container">
+        
+        <div class="badge-label badge-cyan">
+          <span>ETR 2583 // E-ENTREPRENEURSHIP PITCH DECK</span>
+        </div>
+
+        <div class="hero-banner-wrapper">
+          <img src="Breakout_Bites_Studio_logo_design_2K_20260912230154.png" 
+               alt="Breakout Bites Studio Logo Banner" 
+               class="hero-banner-img"
+               onerror="this.onerror=null; this.src='Breakout_Bites_Studio_logo_design_2K_20260912230154.jpg';">
+        </div>
+
+        <h2 class="hero-tagline-quote">
+          "We don't speculate on cravings. <span>We execute on demand.</span>"
+        </h2>
+
+        <!-- Clean Benchmark Presenter Details -->
+        <div class="presenter-benchmark-card">
+          <div class="presenter-row">
+            <span class="presenter-key">PRESENTED BY:</span>
+            <span class="presenter-val name">MOHAMAD ARIS ASHMAN BIN SHARIN</span>
+          </div>
+          <div class="presenter-meta-row">
+            <div class="presenter-meta-item">
+              <span class="presenter-key">STUDENT ID:</span>
+              <span class="presenter-val mono">PDA-2502-024</span>
+            </div>
+            <div class="presenter-divider">•</div>
+            <div class="presenter-meta-item">
+              <span class="presenter-key">CLASS:</span>
+              <span class="presenter-val mono">DIA 4B</span>
+            </div>
+            <div class="presenter-divider">•</div>
+            <div class="presenter-meta-item">
+              <span class="presenter-key">COURSE:</span>
+              <span class="presenter-val course">ETR 2583 // E-ENTREPRENEURSHIP</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SLIDE 2: THE FRICTION POINT (CAMPUS STUDY CRISIS)
+         ======================================================================= -->
+    <section class="slide" id="slide-2" data-title="The Friction Point">
+      <div class="slide-inner problem-container">
+        <div class="badge-label badge-amber">PROBLEM STATEMENT // CAMPUS FRICTION</div>
+        <h1 class="slide-headline">The Late-Night <span class="highlight">Hostel Study Crisis</span></h1>
+        <p class="slide-description">
+          When students grind past midnight, brain fatigue triggers intense hunger spikes. However, campus infrastructure completely fails them.
+        </p>
+
+        <div class="friction-grid">
+          <!-- Metric Stack -->
+          <div class="telemetry-metrics-stack">
+            <div class="metric-card alert">
+              <div class="metric-icon-box">🌙</div>
+              <div class="metric-data-wrap">
+                <div class="metric-num amber">11:00 PM – 2:00 AM</div>
+                <div class="metric-label">Peak cognitive fatigue window where craving intensity reaches maximum campus velocity.</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-box" style="background: rgba(0, 229, 255, 0.12); color: var(--cyan-core); border-color: rgba(0, 229, 255, 0.3);">🔒</div>
+              <div class="metric-data-wrap">
+                <div class="metric-num cyan">10:00 PM LOCK</div>
+                <div class="metric-label">Campus cafeterias shut down entirely, leaving dorm residents completely stranded.</div>
+              </div>
+            </div>
+
+            <div class="metric-card alert">
+              <div class="metric-icon-box">💸</div>
+              <div class="metric-data-wrap">
+                <div class="metric-num amber">+RM 6.00 – RM 8.00</div>
+                <div class="metric-label">Food delivery aggregator fees and peak surcharges that double the price of a small snack.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Synthesis Card -->
+          <div class="glass-card friction-synthesis-card">
+            <div>
+              <div class="badge-label badge-amber">CURRENT ALTERNATIVES FAIL</div>
+              <div class="problem-callout">Students are forced into three terrible compromises:</div>
+              <ul class="problem-points-list">
+                <li class="problem-point-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  <span><strong>Soggy Local Snacks:</strong> Convenience shop crackers lose crunch rapidly in humidity, delivering zero dopamine satisfaction.</span>
+                </li>
+                <li class="problem-point-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  <span><strong>Delivery App Extortion:</strong> Paying RM15 total for a RM7 late-night order is economically unsustainable for students.</span>
+                </li>
+                <li class="problem-point-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                  <span><strong>Starving in Bed:</strong> Compromises sleep quality and next-day academic alertness during critical test periods.</span>
+                </li>
+              </ul>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.76rem; color: var(--amber-core); border-top: 1px solid rgba(245, 158, 11, 0.2); padding-top: 10px; margin-top: 10px;">
+              ⚡ MARKET VOID: A high-margin, ultra-crispy snack delivered directly to dorm rooms without exorbitant delivery surcharges.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SLIDE 3: HERO PRODUCT ARCHITECTURE
+         ======================================================================= -->
+    <section class="slide" id="slide-3" data-title="Product Architecture">
+      <div class="slide-inner">
+        <div class="badge-label badge-cyan">PRODUCT ARCHITECTURE // SENSORY ENGINEERING</div>
+        <h1 class="slide-headline">Precision-Crafted <span class="highlight">Crunch Engineering</span></h1>
+        <p class="slide-description">
+          We designed our snacks specifically for late-night sensory dopamine, audible acoustic crunch, and airtight freshness retention.
+        </p>
+
+        <div class="products-split-grid">
+          <!-- Popia Cheese (Hero) -->
+          <div class="glass-card product-core-card">
+            <div>
+              <div class="product-badge-row">
+                <span class="badge-label badge-cyan">CORE HERO PRODUCT</span>
+                <span style="font-family: var(--font-mono); font-size: 1.15rem; font-weight: 800; color: var(--cyan-core);">RM 6.00</span>
+              </div>
+              <h2 class="product-title">Handmade Popia Cheese</h2>
+              <div class="product-subtitle">// ULTRA-THIN ACOUSTIC CRUNCH TUB (180G)</div>
+              <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.45;">
+                Engineered with paper-thin spring roll pastry sheets fried to absolute golden crispness, tossed generously in our proprietary savory-sweet cheese powder glaze.
+              </p>
+
+              <div class="engineering-specs-grid">
+                <div class="spec-item">
+                  <div class="spec-item-key">Acoustic Snap</div>
+                  <div class="spec-item-val" style="color: var(--cyan-core);">&gt; 85 dB Crunch</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-item-key">Seal Integrity</div>
+                  <div class="spec-item-val">Airtight PET Jar</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-item-key">Freshness Life</div>
+                  <div class="spec-item-val">14–21 Days</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 10px 14px; border: 1px solid rgba(0, 229, 255, 0.15);">
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--cyan-core); font-weight: 700;">TAMPER-EVIDENT INDUCTION SEAL</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;">
+                Every tub is hermetically sealed to lock out tropical humidity, guaranteeing first-day crunch until the final bite.
+              </div>
+            </div>
+          </div>
+
+          <!-- Biskut Aiskrim (Cross-Sell) -->
+          <div class="glass-card product-cross-card">
+            <div>
+              <div class="product-badge-row">
+                <span class="badge-label badge-emerald">HIGH-MARGIN CROSS-SELL</span>
+                <span style="font-family: var(--font-mono); font-size: 1.15rem; font-weight: 800; color: var(--emerald-core);">RM 4.00</span>
+              </div>
+              <h2 class="cross-title">Biskut Aiskrim</h2>
+              <div class="cross-subtitle">// NOSTALGIC SWEET ICED GEMS (140G)</div>
+              <p style="font-size: 0.86rem; color: var(--text-secondary); line-height: 1.45;">
+                The classic nostalgic meringue-topped biscuit pairing. Provides the ideal sweet counterbalance to the rich, savory Popia Cheese.
+              </p>
+
+              <div class="engineering-specs-grid" style="grid-template-columns: 1fr 1fr;">
+                <div class="spec-item" style="border-color: rgba(16, 185, 129, 0.2);">
+                  <div class="spec-item-key">Cross-Sell Ratio</div>
+                  <div class="spec-item-val" style="color: var(--emerald-core);">38% of Orders</div>
+                </div>
+                <div class="spec-item" style="border-color: rgba(16, 185, 129, 0.2);">
+                  <div class="spec-item-key">Breakout Combo</div>
+                  <div class="spec-item-val">RM 9.50 Special</div>
+                </div>
+              </div>
+            </div>
+
+            <div style="background: rgba(0, 0, 0, 0.3); border-radius: 8px; padding: 10px 14px; border: 1px solid rgba(16, 185, 129, 0.15);">
+              <div style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--emerald-core); font-weight: 700;">BASKET SIZE ACCELERATOR</div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 2px;">
+                Adding Biskut Aiskrim into the "Breakout Study Combo" lifts average order value by 58% with zero additional preparation time.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SLIDE 4: THE EXACT OSTERWALDER 9-BOX BUSINESS MODEL CANVAS
+         ======================================================================= -->
+    <section class="slide" id="slide-4" data-title="Business Model Canvas">
+      <div class="slide-inner">
+        <div class="badge-label badge-cyan" style="margin-bottom: 4px; font-size: 0.65rem; padding: 2px 8px;">BUSINESS ARCHITECTURE // STRATEGYZER CANVAS</div>
+        <h1 class="slide-headline" style="font-size: 1.35rem; margin-bottom: 6px; line-height: 1.15;">The 9-Block <span class="highlight">Business Model Canvas</span></h1>
+
+        <!-- Exact Strategyzer 9-Box Architecture -->
+        <div class="bmc-canvas">
+          
+          <!-- Box 1: Key Partners (Full Height of Left Top Section) -->
+          <div class="bmc-card bmc-box box-kp">
+            <div class="card-header bmc-box-header bmc-header">🤝 Key Partners</div>
+            <ul class="bmc-box-list">
+              <li><strong>Pastry &amp; Cheese Wholesalers:</strong> Bulk raw materials at tier-1 pricing</li>
+              <li><strong>Confectionery Distributor:</strong> Bulk supplier for Biskut Aiskrim stock</li>
+              <li><strong>Packaging &amp; Print Vendors:</strong> Food-grade airtight PET tubs &amp; vinyl labels</li>
+              <li><strong>Hostel Peer Runners:</strong> Student contacts across blocks for quick handoffs</li>
+            </ul>
+          </div>
+
+          <!-- Box 2: Key Activities (Top Half) -->
+          <div class="bmc-card bmc-box box-ka">
+            <div class="card-header bmc-box-header bmc-header">⚡ Key Activities</div>
+            <ul class="bmc-box-list">
+              <li><strong>Batch Frying &amp; Seasoning:</strong> Precise temperature popia crisping</li>
+              <li><strong>Confectionery Packing:</strong> Hygienic Biskut Aiskrim portioning</li>
+              <li><strong>WhatsApp Order Management:</strong> Daily intake, payment logging &amp; routing</li>
+            </ul>
+          </div>
+
+          <!-- Box 3: Key Resources (Bottom Half) -->
+          <div class="bmc-card bmc-box box-kr">
+            <div class="card-header bmc-box-header bmc-header">📦 Key Resources</div>
+            <ul class="bmc-box-list">
+              <li><strong>Production Gear:</strong> Induction fryer setup &amp; oil drainage racks</li>
+              <li><strong>Packaging Inventory:</strong> Airtight PET tubs &amp; tamper-evident seals</li>
+              <li><strong>Founder Labor &amp; Ops:</strong> Single-operator cooking, social media &amp; delivery</li>
+              <li><strong>Data Sheets:</strong> Python/Excel models for demand &amp; unit-cost tracking</li>
+            </ul>
+          </div>
+
+          <!-- Box 4: Value Propositions (Center Hero, Full Height) -->
+          <div class="bmc-card bmc-box box-vp">
+            <div class="card-header bmc-box-header bmc-header" style="color: #00F0FF !important;">💎 Value Propositions</div>
+            <ul class="bmc-box-list" style="gap: 6px;">
+              <li><strong>Hero (Popia Cheese):</strong> Handmade, ultra-crispy with savory-sweet glaze</li>
+              <li><strong>Complementary:</strong> Nostalgic sweet Biskut Aiskrim portion packs</li>
+              <li><strong>Campus Delivery:</strong> Scheduled 11 PM &ndash; 2 AM hostel drops (zero surge fees)</li>
+              <li><strong>Breakout Combo:</strong> High-margin sweet + savory study basket builder</li>
+            </ul>
+          </div>
+
+          <!-- Box 5: Customer Relationships (Top Half) -->
+          <div class="bmc-card bmc-box box-cr">
+            <div class="card-header bmc-box-header bmc-header">❤️ Customer Relationships</div>
+            <ul class="bmc-box-list">
+              <li><strong>Direct WhatsApp Service:</strong> High-touch 1-on-1 customer ordering</li>
+              <li><strong>Timed Batch Drops:</strong> Pre-order announcements driving purchase urgency</li>
+              <li><strong>Feedback Loop:</strong> Post-delivery review check-ins &amp; repeat-buyer perks</li>
+            </ul>
+          </div>
+
+          <!-- Box 6: Channels (Bottom Half) -->
+          <div class="bmc-card bmc-box box-ch">
+            <div class="card-header bmc-box-header bmc-header">📢 Channels</div>
+            <ul class="bmc-box-list">
+              <li><strong>TikTok &amp; Instagram:</strong> Sizzling ASMR videos, story polls &amp; drop countdowns</li>
+              <li><strong>Facebook Page:</strong> Campus enterprise bulletins &amp; student group reach</li>
+              <li><strong>WhatsApp Business:</strong> 1-click catalog checkout &amp; instant DuitNow QR</li>
+              <li><strong>Direct Campus Drops:</strong> Scheduled hostel lobby &amp; room-to-room handoffs</li>
+            </ul>
+          </div>
+
+          <!-- Box 7: Customer Segments (Full Height of Right Top Section) -->
+          <div class="bmc-card bmc-box box-cs">
+            <div class="card-header bmc-box-header bmc-header">🎯 Customer Segments</div>
+            <ul class="bmc-box-list">
+              <li><strong>Hostel Residents:</strong> KPM Bandar Penawar students needing evening snacks</li>
+              <li><strong>Late-Night Grinders:</strong> Assignment rushers &amp; midnight study pods</li>
+              <li><strong>Savory Cheese Lovers:</strong> Students seeking intense crunch &amp; cheese flavor</li>
+              <li><strong>Study Groups:</strong> Roommates pooling orders for combo discounts</li>
+            </ul>
+          </div>
+
+          <!-- Box 8: Cost Structure (Bottom Left Span 3 Columns) -->
+          <div class="bmc-card bmc-box box-cost">
+            <div class="card-header bmc-box-header bmc-header amber">📉 Cost Structure</div>
+            <div class="cost-columns-grid">
+              <ul class="bmc-box-list">
+                <li><strong>Direct Material COGS:</strong> Pastry sheets, cheese powder, oil (RM3.30/tub)</li>
+                <li><strong>Biskut Aiskrim Inventory:</strong> Bulk confectionery stock allocated per gram</li>
+              </ul>
+              <ul class="bmc-box-list">
+                <li><strong>Packaging &amp; Labels:</strong> Airtight PET tubs, shrink bands, custom vinyl stickers</li>
+                <li><strong>Operational Overhead:</strong> Sourcing travel fuel &amp; mobile data allocation</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Box 9: Revenue Streams (Bottom Right Span 2 Columns) -->
+          <div class="bmc-card bmc-box box-rev">
+            <div class="card-header bmc-box-header bmc-header emerald">💰 Revenue Streams</div>
+            <ul class="bmc-box-list">
+              <li><strong>Popia Cheese Standard Tub:</strong> RM6.00 / unit (45% net gross margin)</li>
+              <li><strong>Biskut Aiskrim Pocket Pack:</strong> RM4.00 / unit (35% margin)</li>
+              <li><strong>Breakout Study Combo:</strong> RM9.50 (High AOV basket builder)</li>
+              <li><strong>Room Delivery Micro-Fee:</strong> RM1.00 / door drop</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SLIDE 5: SOCIAL COMMERCE FUNNEL
+         ======================================================================= -->
+    <section class="slide" id="slide-5" data-title="Social Commerce Funnel">
+      <div class="slide-inner">
+        <div class="badge-label badge-cyan">CUSTOMER ACQUISITION // SOCIAL COMMERCE</div>
+        <h1 class="slide-headline">The Collegiate <span class="highlight">Conversion Machine</span></h1>
+        <p class="slide-description">
+          A zero-ad-spend social funnel tailored to student browsing habits: from late-night TikTok scrolling to instant WhatsApp checkout.
+        </p>
+
+        <div class="funnel-steps-grid">
+          <!-- PILLAR 01: TIKTOK (TOP OF FUNNEL // SENSORY DISCOVERY) -->
+          <div class="glass-card funnel-step-card">
+            <div class="funnel-stage-num">01</div>
+            <div class="funnel-tier-top">
+              <!-- Tier 1: Platform Badge & Header -->
+              <div class="funnel-platform-header">
+                <div class="app-icon-badge" style="background: #000000; border: 1px solid rgba(255,255,255,0.2); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.909 2.868 2.895 2.895 0 0 1-2.9-2.868 2.895 2.895 0 0 1 2.9-2.868c.307 0 .604.05.88.14V9.452a6.34 6.34 0 0 0-.88-.063A6.346 6.346 0 0 0 3 15.736a6.346 6.346 0 0 0 6.345 6.345 6.345 6.345 0 0 0 6.346-6.345V8.877a8.21 8.21 0 0 0 3.898 1.254V6.686z" fill="#00F2FE"/>
+                    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-2.909 2.868 2.895 2.895 0 0 1-2.9-2.868 2.895 2.895 0 0 1 2.9-2.868c.307 0 .604.05.88.14V9.452a6.34 6.34 0 0 0-.88-.063A6.346 6.346 0 0 0 3 15.736a6.346 6.346 0 0 0 6.345 6.345 6.345 6.345 0 0 0 6.346-6.345V8.877a8.21 8.21 0 0 0 3.898 1.254V6.686z" fill="#FE2C55" style="mix-blend-mode: screen; transform: translate(-1px, 1px);"/>
+                  </svg>
+                </div>
+                <div class="funnel-platform-title-wrap">
+                  <div class="funnel-platform-name">TikTok ASMR Hook</div>
+                  <span class="funnel-phase-indicator" style="color: #00F2FE;">01 // TOFU (Top of Funnel)</span>
+                </div>
+              </div>
+
+              <!-- Tier 2: Primary Strategy & Operational Narrative -->
+              <div>
+                <div class="funnel-strategy-sub" style="color: var(--cyan-core); margin-bottom: 4px;">Sensory Discovery &amp; Viral Reach</div>
+                <p class="funnel-step-desc">
+                  High-fidelity audio of popia frying, crunch microphone tests, and behind-the-scenes dorm packaging reels. Taps directly into late-night campus cravings with zero ad spend.
+                </p>
+              </div>
+
+              <!-- Tier 3: Conversion Mechanism -->
+              <div class="funnel-mechanism-box" style="border-left-color: #00F0FF;">
+                <div class="funnel-mechanism-label">Conversion Mechanism</div>
+                <div class="funnel-mechanism-text">Algorithmic Hook &rarr; Routes student attention directly to Instagram Linktree &amp; WhatsApp.</div>
+              </div>
+            </div>
+
+            <!-- Tier 4: KPI & Telemetry Footer -->
+            <div class="funnel-telemetry-footer" style="border-color: rgba(0, 242, 254, 0.25);">
+              <div class="funnel-telemetry-dot" style="background: #00F2FE; box-shadow: 0 0 8px #00F2FE;"></div>
+              <div class="funnel-telemetry-content">
+                <span class="funnel-telemetry-label">Target Metric</span>
+                <span class="funnel-telemetry-val" style="color: #00F2FE;">&gt; 5,000 Organic Views (Zero Ad Spend)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 02: INSTAGRAM (MID FUNNEL // BRAND IDENTITY & SOCIAL PROOF) -->
+          <div class="glass-card funnel-step-card">
+            <div class="funnel-stage-num">02</div>
+            <div class="funnel-tier-top">
+              <!-- Tier 1: Platform Badge & Header -->
+              <div class="funnel-platform-header">
+                <div class="app-icon-badge" style="background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+                <div class="funnel-platform-title-wrap">
+                  <div class="funnel-platform-name">Instagram Showcase</div>
+                  <span class="funnel-phase-indicator" style="color: #E1306C;">02 // MOFU (Middle of Funnel)</span>
+                </div>
+              </div>
+
+              <!-- Tier 2: Primary Strategy & Operational Narrative -->
+              <div>
+                <div class="funnel-strategy-sub" style="color: #F472B6; margin-bottom: 4px;">Social Proof &amp; Brand Trust</div>
+                <p class="funnel-step-desc">
+                  Aesthetic product photography, timed batch countdown stickers, student reaction story reposts, and permanent feedback highlight archives that validate food quality.
+                </p>
+              </div>
+
+              <!-- Tier 3: Conversion Mechanism -->
+              <div class="funnel-mechanism-box" style="border-left-color: #E1306C;">
+                <div class="funnel-mechanism-label">Conversion Mechanism</div>
+                <div class="funnel-mechanism-text">Visual Trust &amp; Proof &rarr; Timed batch countdown stickers lock in pre-order commitments.</div>
+              </div>
+            </div>
+
+            <!-- Tier 4: KPI & Telemetry Footer -->
+            <div class="funnel-telemetry-footer" style="border-color: rgba(225, 48, 108, 0.25);">
+              <div class="funnel-telemetry-dot" style="background: #E1306C; box-shadow: 0 0 8px #E1306C;"></div>
+              <div class="funnel-telemetry-content">
+                <span class="funnel-telemetry-label">Target Metric</span>
+                <span class="funnel-telemetry-val" style="color: #F472B6;">85% Engagement &amp; Pre-Order Rate</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 03: FACEBOOK PAGE (COMMUNITY RETENTION // CAMPUS REACH) -->
+          <div class="glass-card funnel-step-card" style="border-color: rgba(24, 119, 242, 0.35);">
+            <div class="funnel-stage-num">03</div>
+            <div class="funnel-tier-top">
+              <!-- Tier 1: Platform Badge & Header -->
+              <div class="funnel-platform-header">
+                <div class="app-icon-badge" style="background: #1877F2; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
+                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                  </svg>
+                </div>
+                <div class="funnel-platform-title-wrap">
+                  <div class="funnel-platform-name">Facebook Community</div>
+                  <span class="funnel-phase-indicator" style="color: #60A5FA;">03 // MOFU (Middle of Funnel)</span>
+                </div>
+              </div>
+
+              <!-- Tier 2: Primary Strategy & Operational Narrative -->
+              <div>
+                <div class="funnel-strategy-sub" style="color: #93C5FD; margin-bottom: 4px;">Campus Anchoring &amp; Bulletin Infiltration</div>
+                <p class="funnel-step-desc">
+                  Official student enterprise page, residential college group updates, study-session bulk combo promos, and active cross-dorm community bulletin announcements.
+                </p>
+              </div>
+
+              <!-- Tier 3: Conversion Mechanism -->
+              <div class="funnel-mechanism-box" style="border-left-color: #1877F2;">
+                <div class="funnel-mechanism-label">Conversion Mechanism</div>
+                <div class="funnel-mechanism-text">Community Anchoring &rarr; Dorm bulletins &amp; club announcements drive bulk room pooling.</div>
+              </div>
+            </div>
+
+            <!-- Tier 4: KPI & Telemetry Footer -->
+            <div class="funnel-telemetry-footer" style="border-color: rgba(24, 119, 242, 0.25);">
+              <div class="funnel-telemetry-dot" style="background: #1877F2; box-shadow: 0 0 8px #1877F2;"></div>
+              <div class="funnel-telemetry-content">
+                <span class="funnel-telemetry-label">Target Metric</span>
+                <span class="funnel-telemetry-val" style="color: #93C5FD;">100% Dorm Group Penetration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- PILLAR 04: WHATSAPP BUSINESS (BOTTOM FUNNEL // CHECKOUT & DISPATCH) -->
+          <div class="glass-card funnel-step-card" style="border-color: rgba(16, 185, 129, 0.4);">
+            <div class="funnel-stage-num">04</div>
+            <div class="funnel-tier-top">
+              <!-- Tier 1: Platform Badge & Header -->
+              <div class="funnel-platform-header">
+                <div class="app-icon-badge" style="background: #25D366; width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF">
+                    <path d="M12.031 2C6.511 2 2.025 6.486 2.025 12.006c0 1.905.539 3.737 1.562 5.324L2 22l4.82-1.547a9.97 9.97 0 0 0 5.211 1.453h.005c5.518 0 10.005-4.486 10.005-10.006C22.041 6.486 17.553 2 12.031 2zm0 18.188h-.004a8.17 8.17 0 0 1-4.167-1.144l-.299-.177-3.09.993.992-3.013-.195-.31a8.172 8.172 0 0 1-1.258-4.397c0-4.514 3.673-8.188 8.19-8.188 2.187 0 4.243.853 5.79 2.4a8.136 8.136 0 0 1 2.398 5.79c0 4.515-3.673 8.188-8.189 8.188z"/>
+                  </svg>
+                </div>
+                <div class="funnel-platform-title-wrap">
+                  <div class="funnel-platform-name">WhatsApp Checkout</div>
+                  <span class="funnel-phase-indicator" style="color: var(--emerald-core);">04 // BOFU (Bottom of Funnel)</span>
+                </div>
+              </div>
+
+              <!-- Tier 2: Primary Strategy & Operational Narrative -->
+              <div>
+                <div class="funnel-strategy-sub" style="color: var(--emerald-core); margin-bottom: 4px;">Frictionless Closing &amp; Direct Dispatch</div>
+                <p class="funnel-step-desc">
+                  Direct WhatsApp Business catalog. 1-click product selection, instant DuitNow QR verification, and automated door-to-dorm delivery dispatch coordination.
+                </p>
+              </div>
+
+              <!-- Tier 3: Conversion Mechanism -->
+              <div class="funnel-mechanism-box" style="border-left-color: #25D366;">
+                <div class="funnel-mechanism-label">Conversion Mechanism</div>
+                <div class="funnel-mechanism-text">Frictionless Closing &rarr; 1-click catalog checkout with instant DuitNow QR verification.</div>
+              </div>
+            </div>
+
+            <!-- Tier 4: KPI & Telemetry Footer -->
+            <div class="funnel-telemetry-footer" style="border-color: rgba(16, 185, 129, 0.3);">
+              <div class="funnel-telemetry-dot" style="background: #25D366; box-shadow: 0 0 8px #25D366;"></div>
+              <div class="funnel-telemetry-content">
+                <span class="funnel-telemetry-label">Target Metric</span>
+                <span class="funnel-telemetry-val" style="color: var(--emerald-core);">&gt; 92% Cart-to-Cash Rate (&lt; 60s)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SLIDE 6: FINANCIAL TELEMETRY & UNIT ECONOMICS
+         ======================================================================= -->
+    <section class="slide" id="slide-6" data-title="Financial Telemetry">
+      <div class="slide-inner finance-container">
+        <div class="badge-label badge-emerald">FINANCIAL TELEMETRY // UNIT ECONOMICS</div>
+        <h1 class="slide-headline">Rigorous Margins & <span class="highlight">Break-Even Analysis</span></h1>
+        <p class="slide-description">
+          Real numbers calibrated for high profitability, rapid inventory turnover, and zero perishable waste risk.
+        </p>
+
+        <div class="finance-dashboard-grid">
+          <!-- COGS Table -->
+          <div class="glass-card cogs-breakdown-card">
+            <div class="badge-label badge-cyan">UNIT COST OF GOODS SOLD (COGS)</div>
+            <table class="cogs-table">
+              <thead>
+                <tr>
+                  <th>Cost Item Breakdown</th>
+                  <th>Component Details</th>
+                  <th style="text-align: right;">Unit Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Spring Roll Pastry Sheets</td>
+                  <td>Premium thin-layer pastry wrapper</td>
+                  <td class="cost-val">RM 1.20</td>
+                </tr>
+                <tr>
+                  <td>Cheese Seasoning Powder</td>
+                  <td>Signature savory-sweet cheese blend</td>
+                  <td class="cost-val">RM 1.10</td>
+                </tr>
+                <tr>
+                  <td>Packaging Tub & Label</td>
+                  <td>Airtight PET container + vinyl sticker</td>
+                  <td class="cost-val">RM 0.70</td>
+                </tr>
+                <tr>
+                  <td>Cooking Oil & Utilities</td>
+                  <td>Deep-frying oil allocation + gas</td>
+                  <td class="cost-val">RM 0.30</td>
+                </tr>
+                <tr class="total-row">
+                  <td colspan="2">TOTAL DIRECT UNIT COGS</td>
+                  <td class="cost-val">RM 3.30</td>
+                </tr>
+                <tr style="background: rgba(0, 229, 255, 0.05);">
+                  <td colspan="2" style="color: #FFFFFF; font-weight: 700;">RETAIL SELLING PRICE</td>
+                  <td class="cost-val" style="color: #FFFFFF; font-size: 1.08rem;">RM 6.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Profitability & Batch Telemetry -->
+          <div class="glass-card profit-telemetry-card">
+            <div>
+              <div class="badge-label badge-emerald">GROSS PROFIT PER TUB</div>
+              <div class="margin-hero-stat">
+                <div class="margin-percent">45.0%</div>
+                <div class="margin-subtitle">RM 2.70 NET GROSS MARGIN PER TUB</div>
+              </div>
+            </div>
+
+            <div class="batch-summary-box">
+              <div class="batch-stat">
+                <div class="batch-stat-key">Break-Even Threshold</div>
+                <div class="batch-stat-val" style="color: var(--amber-core);">25 Units</div>
+                <div style="font-size: 0.64rem; color: var(--text-muted); margin-top: 2px;">Covers all fixed batch overhead</div>
+              </div>
+              <div class="batch-stat">
+                <div class="batch-stat-key">Standard Batch Run</div>
+                <div class="batch-stat-val" style="color: var(--cyan-core);">50 Units</div>
+                <div style="font-size: 0.64rem; color: var(--text-muted); margin-top: 2px;">Target for Batch 01 rollout</div>
+              </div>
+              <div class="batch-stat">
+                <div class="batch-stat-key">Gross Batch Revenue</div>
+                <div class="batch-stat-val" style="color: #FFFFFF;">RM 300.00</div>
+                <div style="font-size: 0.64rem; color: var(--text-muted); margin-top: 2px;">50 units @ RM6.00</div>
+              </div>
+              <div class="batch-stat">
+                <div class="batch-stat-key">Net Profit Per Batch</div>
+                <div class="batch-stat-val" style="color: var(--emerald-core);">RM 135.00</div>
+                <div style="font-size: 0.64rem; color: var(--text-muted); margin-top: 2px;">After all direct costs deducted</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SLIDE 7: BATCH 01 ROLLOUT & CALL TO ACTION
+         ======================================================================= -->
+    <section class="slide" id="slide-7" data-title="Batch 01 Rollout">
+      <div class="slide-inner">
+        <div class="badge-label badge-cyan">EXECUTION ROADMAP // BATCH 01 ROLLOUT</div>
+        <h1 class="slide-headline">Ready for <span class="highlight">Tactical Execution</span></h1>
+        <p class="slide-description">
+          We are moving from concept to live hostel delivery. Our supply chain is locked, recipes calibrated, and pre-orders ready.
+        </p>
+
+        <div class="rollout-grid">
+          <!-- Timeline Stack -->
+          <div class="glass-card timeline-card">
+            <div class="badge-label badge-cyan">BATCH 01 ROLLOUT TIMELINE</div>
+            
+            <div class="timeline-track">
+              <div class="timeline-step">
+                <div class="step-time-badge">T - 7 DAYS</div>
+                <div class="step-content">
+                  <div class="step-title">Teaser Drop & Pre-Order List Opens</div>
+                  <div class="step-desc">Release 15-second ASMR TikTok reels and open the 50-tub pre-order limit on WhatsApp Business.</div>
+                </div>
+              </div>
+
+              <div class="timeline-step">
+                <div class="step-time-badge">T - 2 DAYS</div>
+                <div class="step-content">
+                  <div class="step-title">Batch Production & Hermetic Sealing</div>
+                  <div class="step-desc">Bulk frying, precision cheese glazing, airtight packaging in PET tubs with tamper seals.</div>
+                </div>
+              </div>
+
+              <div class="timeline-step">
+                <div class="step-time-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-core); border-color: rgba(16, 185, 129, 0.3);">T - 0 LAUNCH</div>
+                <div class="step-content">
+                  <div class="step-title">11:00 PM Campus Delivery Blitz</div>
+                  <div class="step-desc">Execute peer-to-peer room deliveries across KPM Bandar Penawar hostels right as late-night study sessions peak.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dispatch & QR Card -->
+          <div class="glass-card action-dispatch-card">
+            <div>
+              <div class="badge-label badge-emerald">SCAN TO ORDER // WHATSAPP CATALOG</div>
+              <div style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #FFFFFF;">
+                Connect With Breakout Bites
+              </div>
+            </div>
+
+            <!-- Stylized High-Tech QR Code SVG -->
+            <div class="qr-container">
+              <svg class="qr-svg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Position markers -->
+                <rect x="10" y="10" width="26" height="26" rx="4" fill="#0A0E18" stroke="#00E5FF" stroke-width="3"/>
+                <rect x="17" y="17" width="12" height="12" rx="2" fill="#00E5FF"/>
+                
+                <rect x="64" y="10" width="26" height="26" rx="4" fill="#0A0E18" stroke="#00E5FF" stroke-width="3"/>
+                <rect x="71" y="17" width="12" height="12" rx="2" fill="#00E5FF"/>
+                
+                <rect x="10" y="64" width="26" height="26" rx="4" fill="#0A0E18" stroke="#00E5FF" stroke-width="3"/>
+                <rect x="17" y="71" width="12" height="12" rx="2" fill="#00E5FF"/>
+                
+                <!-- Data blocks -->
+                <rect x="42" y="12" width="6" height="6" fill="#0A0E18"/>
+                <rect x="50" y="18" width="6" height="6" fill="#00E5FF"/>
+                <rect x="42" y="26" width="6" height="6" fill="#0A0E18"/>
+                
+                <rect x="12" y="44" width="6" height="6" fill="#00E5FF"/>
+                <rect x="22" y="48" width="6" height="6" fill="#0A0E18"/>
+                <rect x="30" y="42" width="6" height="6" fill="#00E5FF"/>
+                
+                <rect x="42" y="42" width="16" height="16" rx="3" fill="#00E5FF"/>
+                <circle cx="50" cy="50" r="4" fill="#0A0E18"/>
+                
+                <rect x="64" y="44" width="6" height="6" fill="#0A0E18"/>
+                <rect x="72" y="48" width="6" height="6" fill="#00E5FF"/>
+                <rect x="82" y="42" width="6" height="6" fill="#0A0E18"/>
+                
+                <rect x="44" y="66" width="6" height="6" fill="#00E5FF"/>
+                <rect x="52" y="72" width="6" height="6" fill="#0A0E18"/>
+                <rect x="68" y="68" width="6" height="6" fill="#00E5FF"/>
+                <rect x="78" y="74" width="6" height="6" fill="#0A0E18"/>
+                <rect x="66" y="82" width="6" height="6" fill="#00E5FF"/>
+                <rect x="44" y="82" width="6" height="6" fill="#00E5FF"/>
+              </svg>
+            </div>
+
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--cyan-core); font-weight: 700; margin-bottom: 4px;">
+                @breakoutbites.studio
+              </div>
+              <div class="dispatch-manifesto">
+                "We don't speculate on cravings. <span>We execute on demand.</span>"
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sleek Persistent Deck Controls Dock -->
+  <footer class="deck-controls-dock nav-controls" id="deckControlsDock">
+    <button class="nav-btn" id="prevBtn" title="Previous Slide (← / PageUp)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+    </button>
+
+    <div class="dot-indicators" id="dotIndicators">
+      <div class="dot active" onclick="goToSlide(1)"></div>
+      <div class="dot" onclick="goToSlide(2)"></div>
+      <div class="dot" onclick="goToSlide(3)"></div>
+      <div class="dot" onclick="goToSlide(4)"></div>
+      <div class="dot" onclick="goToSlide(5)"></div>
+      <div class="dot" onclick="goToSlide(6)"></div>
+      <div class="dot" onclick="goToSlide(7)"></div>
+    </div>
+
+    <div class="slide-counter" id="slideCounter">[ 01 / 07 ]</div>
+
+    <button class="nav-btn" id="nextBtn" title="Next Slide (→ / Space / PageDown)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="9 18 15 12 9 6"></polyline>
+      </svg>
+    </button>
+  </footer>
+
+  <!-- Deck Engine Logic -->
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const totalSlides = slides.length;
+      let currentIndex = 0;
+
+      const topHud = document.getElementById('topHud') || document.getElementById('hudHeader');
+      const slideTitlePill = document.getElementById('slideTitlePill') || document.getElementById('hudSlideTitle');
+      const hudHeader = topHud;
+      const hudSlideTitle = slideTitlePill;
+      const progressBar = document.getElementById('progressBar');
+      const slideCounter = document.getElementById('slideCounter');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const exportPdfBtn = document.getElementById('exportPdfBtn');
+      const cleanModeBtn = document.getElementById('cleanModeBtn');
+      const cleanModeBtnText = document.getElementById('cleanModeBtnText');
+
+      function updateSlide(index) {
+        if (index < 0) index = 0;
+        if (index >= totalSlides) index = totalSlides - 1;
+        currentIndex = index;
+
+        // Slide activation
+        slides.forEach((slide, idx) => {
+          if (idx === currentIndex) {
+            slide.classList.add('active');
+          } else {
+            slide.classList.remove('active');
+          }
+        });
+
+        // Top progress bar update
+        const progressPercent = ((currentIndex + 1) / totalSlides) * 100;
+        progressBar.style.width = progressPercent + '%';
+
+        // Counter text: [ 01 / 07 ]
+        const curStr = String(currentIndex + 1).padStart(2, '0');
+        const totStr = String(totalSlides).padStart(2, '0');
+        slideCounter.textContent = `[ ${curStr} / ${totStr} ]`;
+
+        // Dots update
+        dots.forEach((dot, idx) => {
+          if (idx === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+
+        // Nav buttons state
+        prevBtn.disabled = (currentIndex === 0);
+        nextBtn.disabled = (currentIndex === totalSlides - 1);
+
+        // Persistent HUD Header state (Slide 1 vs Slides 2-7)
+        if (currentIndex === 0) {
+          if (topHud) {
+            topHud.classList.add('is-title-slide');
+            topHud.classList.remove('active');
+          }
+        } else {
+          if (topHud) {
+            topHud.classList.remove('is-title-slide');
+            topHud.classList.add('active');
+          }
+          const title = slides[currentIndex].getAttribute('data-title') || 'Slide';
+          if (slideTitlePill) slideTitlePill.textContent = title;
+        }
+      }
+
+      window.goToSlide = function(slideNum) {
+        updateSlide(slideNum - 1);
+      };
+
+      function nextSlide() {
+        if (currentIndex < totalSlides - 1) {
+          updateSlide(currentIndex + 1);
+        }
+      }
+
+      function prevSlide() {
+        if (currentIndex > 0) {
+          updateSlide(currentIndex - 1);
+        }
+      }
+
+      // Clean / Presentation Mode Toggle
+      function toggleCleanMode() {
+        document.body.classList.toggle('clean-mode');
+        const isClean = document.body.classList.contains('clean-mode');
+        if (cleanModeBtnText) {
+          cleanModeBtnText.textContent = isClean ? "Show UI (H)" : "Hide UI (H)";
+        }
+        if (cleanModeBtn) {
+          cleanModeBtn.classList.toggle('active-mode', isClean);
+        }
+      }
+
+      // PDF Export Engine (Resolves clean preview state)
+      function exportPDF() {
+        document.body.classList.remove('clean-mode');
+        if (cleanModeBtnText) cleanModeBtnText.textContent = "Hide UI (H)";
+        if (cleanModeBtn) cleanModeBtn.classList.remove('active-mode');
+        window.scrollTo(0, 0);
+        setTimeout(() => {
+          window.print();
+        }, 150);
+      }
+
+      // Event Listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+      cleanModeBtn.addEventListener('click', toggleCleanMode);
+      exportPdfBtn.addEventListener('click', exportPDF);
+
+      // Keyboard Controls
+      window.addEventListener('keydown', function(e) {
+        if (['input', 'textarea'].includes(document.activeElement.tagName.toLowerCase())) return;
+
+        switch(e.key) {
+          case 'ArrowRight':
+          case ' ':
+          case 'PageDown':
+            e.preventDefault();
+            nextSlide();
+            break;
+          case 'ArrowLeft':
+          case 'PageUp':
+            e.preventDefault();
+            prevSlide();
+            break;
+          case 'Home':
+            e.preventDefault();
+            updateSlide(0);
+            break;
+          case 'End':
+            e.preventDefault();
+            updateSlide(totalSlides - 1);
+            break;
+          case 'h':
+          case 'H':
+            e.preventDefault();
+            toggleCleanMode();
+            break;
+          case 'p':
+          case 'P':
+            e.preventDefault();
+            exportPDF();
+            break;
+        }
+      });
+
+      // Initialize slide 1
+      updateSlide(0);
+
+      // =======================================================================
+      // HIGH-TECH CYBER BGM AUDIO ENGINE
+      // =======================================================================
+      const playlist = [
+        { 
+          title: "Literature - Reina Ueda", 
+          src: "Reina Ueda - Literature.mp3",
+          fallbackSrc: "Reina Ueda - Literature.m4a"
+        },
+        { 
+          title: "Red Liberation (Vocal)", 
+          src: "fripSide - Red Liberation (Audio).mp3",
+          fallbackSrc: "fripSide - Red Liberation (Audio).m4a"
+        },
+        { 
+          title: "Red Liberation (Inst)", 
+          src: "fripSide - Red Liberation[instrumental] (Audio).mp3",
+          fallbackSrc: "fripSide - Red Liberation[instrumental] (Audio).m4a"
+        }
+      ];
+      let currentTrackIndex = 0;
+      let isLooping = false;
+      let fallbackAttempt = 0;
+
+      const audio = new Audio();
+      audio.volume = 0.35;
+      audio.preload = "auto";
+
+      const trackTitleDisplay = document.getElementById('trackTitleDisplay');
+      const btnPlayPause = document.getElementById('btnPlayPause');
+      const btnPrevTrack = document.getElementById('btnPrevTrack');
+      const btnNextTrack = document.getElementById('btnNextTrack');
+      const btnLoopTrack = document.getElementById('btnLoopTrack');
+      const volumeSlider = document.getElementById('volumeSlider');
+      const volumePercentage = document.getElementById('volumePercentage');
+      const volIcon = document.getElementById('volIcon');
+      const eqBars = document.querySelector('.audio-equalizer-bars');
+
+      function updatePlayerUI() {
+        if (trackTitleDisplay && playlist[currentTrackIndex]) {
+          trackTitleDisplay.textContent = playlist[currentTrackIndex].title;
+        }
+        if (audio.paused) {
+          if (btnPlayPause) {
+            btnPlayPause.textContent = '▶';
+            btnPlayPause.title = 'Play (BGM)';
+          }
+          if (eqBars) eqBars.classList.add('paused');
+        } else {
+          if (btnPlayPause) {
+            btnPlayPause.textContent = '⏸';
+            btnPlayPause.title = 'Pause (BGM)';
+          }
+          if (eqBars) eqBars.classList.remove('paused');
+        }
+      }
+
+      function loadTrack(index, autoPlay = true) {
+        currentTrackIndex = (index + playlist.length) % playlist.length;
+        fallbackAttempt = 0;
+        const track = playlist[currentTrackIndex];
+        audio.src = encodeURI(track.src);
+        audio.loop = isLooping;
+        updatePlayerUI();
+        if (autoPlay) {
+          const p = audio.play();
+          if (p !== undefined) {
+            p.then(() => {
+              updatePlayerUI();
+            }).catch((err) => {
+              console.log("Audio playback waiting for user gesture:", err);
+              updatePlayerUI();
+            });
+          }
+        }
+      }
+
+      // Audio error fallback handler (.mp3 -> .m4a -> .wav)
+      audio.addEventListener('error', function(e) {
+        const cur = playlist[currentTrackIndex];
+        fallbackAttempt++;
+        if (fallbackAttempt === 1) {
+          const fallback = cur.fallbackSrc || cur.src.replace(/\.mp3$/i, '.m4a');
+          console.warn(`Attempting .m4a audio fallback: ${fallback}`);
+          audio.src = encodeURI(fallback);
+          audio.play().catch(()=>{});
+        } else if (fallbackAttempt === 2) {
+          const wavSrc = cur.src.replace(/\.mp3$/i, '.wav');
+          console.warn(`Attempting .wav audio fallback: ${wavSrc}`);
+          audio.src = encodeURI(wavSrc);
+          audio.play().catch(()=>{});
+        }
+      });
+
+      // Track advancement / loop behavior
+      audio.addEventListener('ended', function() {
+        if (isLooping) {
+          audio.currentTime = 0;
+          audio.play().catch(()=>{});
+        } else {
+          loadTrack(currentTrackIndex + 1, true);
+        }
+      });
+
+      audio.addEventListener('play', updatePlayerUI);
+      audio.addEventListener('pause', updatePlayerUI);
+
+      // Play / Pause toggle
+      if (btnPlayPause) {
+        btnPlayPause.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (audio.paused) {
+            audio.play().catch(()=>{});
+          } else {
+            audio.pause();
+          }
+          updatePlayerUI();
+        });
+      }
+
+      // Next / Prev track
+      if (btnNextTrack) {
+        btnNextTrack.addEventListener('click', function(e) {
+          e.stopPropagation();
+          loadTrack(currentTrackIndex + 1, true);
+        });
+      }
+      if (btnPrevTrack) {
+        btnPrevTrack.addEventListener('click', function(e) {
+          e.stopPropagation();
+          loadTrack(currentTrackIndex - 1, true);
+        });
+      }
+
+      // Loop toggle
+      if (btnLoopTrack) {
+        btnLoopTrack.addEventListener('click', function(e) {
+          e.stopPropagation();
+          isLooping = !isLooping;
+          audio.loop = isLooping;
+          btnLoopTrack.classList.toggle('active', isLooping);
+          btnLoopTrack.title = isLooping ? "Loop Active (Current Track)" : "Toggle Loop";
+        });
+      }
+
+      // Volume slider
+      if (volumeSlider) {
+        volumeSlider.addEventListener('input', function(e) {
+          const val = parseFloat(e.target.value);
+          audio.volume = val;
+          if (volumePercentage) volumePercentage.textContent = Math.round(val * 100) + '%';
+          if (volIcon) volIcon.textContent = val === 0 ? '🔇' : val < 0.5 ? '🔉' : '🔊';
+        });
+      }
+
+      // Mute / Unmute icon click
+      if (volIcon) {
+        volIcon.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (audio.volume > 0) {
+            audio.dataset.prevVol = audio.volume;
+            audio.volume = 0;
+            if (volumeSlider) volumeSlider.value = 0;
+            if (volumePercentage) volumePercentage.textContent = '0%';
+            volIcon.textContent = '🔇';
+          } else {
+            const restored = parseFloat(audio.dataset.prevVol || 0.35);
+            audio.volume = restored;
+            if (volumeSlider) volumeSlider.value = restored;
+            if (volumePercentage) volumePercentage.textContent = Math.round(restored * 100) + '%';
+            volIcon.textContent = restored < 0.5 ? '🔉' : '🔊';
+          }
+        });
+      }
+
+      // Autoplay with graceful user-gesture fallback
+      function initAudioPlayback() {
+        loadTrack(0, false);
+        const playPromise = audio.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            updatePlayerUI();
+          }).catch((err) => {
+            console.log("Autoplay blocked by browser policy. Unlocking audio on first user gesture.", err);
+            updatePlayerUI();
+            const startPlaybackOnGesture = function() {
+              audio.play().then(() => {
+                updatePlayerUI();
+              }).catch(()=>{});
+              window.removeEventListener('click', startPlaybackOnGesture);
+              window.removeEventListener('keydown', startPlaybackOnGesture);
+              window.removeEventListener('touchstart', startPlaybackOnGesture);
+            };
+            window.addEventListener('click', startPlaybackOnGesture, { once: true });
+            window.addEventListener('keydown', startPlaybackOnGesture, { once: true });
+            window.addEventListener('touchstart', startPlaybackOnGesture, { once: true });
+          });
+        }
+      }
+
+      // Initialize audio engine
+      initAudioPlayback();
+    })();
+  </script>
+</body>
+</html>
