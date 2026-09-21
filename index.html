@@ -685,6 +685,137 @@
       border-color: var(--text-main);
     }
 
+    /* Weight Selector & Tier Pricing Styles */
+    .weight-selector-container {
+      margin-top: 1.25rem;
+      margin-bottom: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-hairline);
+    }
+
+    .weight-selector-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    .weight-selector-label {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 500;
+    }
+
+    .weight-selected-badge {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--accent-emerald-dark);
+      background-color: var(--accent-emerald-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      border: 1px solid rgba(5, 150, 105, 0.2);
+    }
+
+    .weight-select-wrapper {
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+
+    .weight-select {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-main);
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-hairline);
+      border-radius: 2px;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234B5563' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .weight-select:focus {
+      outline: none;
+      border-color: var(--accent-emerald);
+      background-color: #FFFFFF;
+      box-shadow: 0 0 0 1px var(--accent-emerald);
+    }
+
+    .weight-pill-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+    }
+
+    .weight-pill-btn {
+      padding: 0.35rem 0.2rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-align: center;
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-hairline);
+      border-radius: 2px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .weight-pill-btn:hover {
+      border-color: var(--text-muted);
+      color: var(--text-main);
+    }
+
+    .weight-pill-btn.active {
+      background-color: var(--text-main);
+      border-color: var(--text-main);
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+
+    .bundle-static-pill {
+      padding: 0.55rem 0.75rem;
+      background-color: var(--bg-subtle);
+      border: 1px dashed var(--border-hairline);
+      border-radius: 2px;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .modal-summary-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: var(--bg-subtle);
+      border: 1px solid var(--border-hairline);
+      padding: 0.65rem 0.85rem;
+      border-radius: 2px;
+      margin-bottom: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    .modal-summary-item {
+      color: var(--text-main);
+      font-weight: 500;
+    }
+
+    .modal-summary-separator {
+      color: var(--text-light);
+    }
+
     /* ==========================================================================
        E. CAMPUS LOGISTICS (#logistics)
        ========================================================================== */
@@ -1552,7 +1683,7 @@
 
           <div class="products-grid">
             <!-- Card 1: Ice Gem Biscuits (BB-01) -->
-            <div class="product-card">
+            <div class="product-card" id="card-bb01">
               <div>
                 <div class="card-kicker">
                   <span class="item-code">ITEM // BB-01</span>
@@ -1564,18 +1695,38 @@
                     Crunchy bite-sized biscuits topped with nostalgic, colorful spun-sugar pastel icing. Sourced in bulk, hygienically portioned, and sealed in food-grade stand-up ziplock pouches.
                   </p>
                   <ul class="spec-list">
-                    <li class="spec-item"><span class="spec-bullet"></span> 140g Food-Grade Stand-Up Ziplock Pouch</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> <span id="spec-weight-bb01">100g</span> Food-Grade Stand-Up Ziplock Pouch</li>
                     <li class="spec-item"><span class="spec-bullet"></span> Classic pastel spun-sugar crown</li>
                     <li class="spec-item"><span class="spec-bullet"></span> Moisture-lock seal</li>
                   </ul>
+                </div>
+                <div class="weight-selector-container">
+                  <div class="weight-selector-header">
+                    <label for="weight-select-bb01" class="weight-selector-label">Weight Option</label>
+                    <span class="weight-selected-badge" id="badge-bb01">100g &bull; RM 4.00</span>
+                  </div>
+                  <div class="weight-select-wrapper">
+                    <select id="weight-select-bb01" class="weight-select" onchange="onWeightSelectChange('bb01', this.value)" aria-label="Weight options for Ice Gem Biscuits">
+                      <option value="100g" data-price="4.00" selected>100g (RM 4.00)</option>
+                      <option value="200g" data-price="7.00">200g (RM 7.00)</option>
+                      <option value="300g" data-price="10.00">300g (RM 10.00)</option>
+                      <option value="400g" data-price="13.00">400g (RM 13.00)</option>
+                    </select>
+                  </div>
+                  <div class="weight-pill-row" role="group" aria-label="Select Weight for Ice Gem Biscuits">
+                    <button type="button" class="weight-pill-btn active" data-weight="100g" onclick="selectWeightPill('bb01', '100g')">100g</button>
+                    <button type="button" class="weight-pill-btn" data-weight="200g" onclick="selectWeightPill('bb01', '200g')">200g</button>
+                    <button type="button" class="weight-pill-btn" data-weight="300g" onclick="selectWeightPill('bb01', '300g')">300g</button>
+                    <button type="button" class="weight-pill-btn" data-weight="400g" onclick="selectWeightPill('bb01', '400g')">400g</button>
+                  </div>
                 </div>
               </div>
               <div class="card-footer">
                 <div class="price-block">
                   <span class="price-label">Price</span>
-                  <span class="price-value">RM 4.00</span>
+                  <span class="price-value" id="price-bb01">RM 4.00</span>
                 </div>
-                <button class="btn-card-action" onclick="openOrderModal('Ice Gem Biscuits (140g Pouch - RM 4.00)')">
+                <button class="btn-card-action" id="btn-order-bb01" onclick="openOrderModalForProduct('bb01')">
                   <span>Order Pouch</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1586,7 +1737,7 @@
             </div>
 
             <!-- Card 2: Choco Bear Biscuits (BB-02) -->
-            <div class="product-card">
+            <div class="product-card" id="card-bb02">
               <div>
                 <div class="card-kicker">
                   <span class="item-code">ITEM // BB-02</span>
@@ -1598,18 +1749,38 @@
                     Crisp, bear-shaped golden biscuits filled with a rich, smooth chocolate cream center. High-indulgence late-night sugar boost.
                   </p>
                   <ul class="spec-list">
-                    <li class="spec-item"><span class="spec-bullet"></span> 140g Food-Grade Stand-Up Ziplock Pouch</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> <span id="spec-weight-bb02">100g</span> Food-Grade Stand-Up Ziplock Pouch</li>
                     <li class="spec-item"><span class="spec-bullet"></span> Smooth chocolate cream core</li>
                     <li class="spec-item"><span class="spec-bullet"></span> Crisp golden biscuit shell</li>
                   </ul>
+                </div>
+                <div class="weight-selector-container">
+                  <div class="weight-selector-header">
+                    <label for="weight-select-bb02" class="weight-selector-label">Weight Option</label>
+                    <span class="weight-selected-badge" id="badge-bb02">100g &bull; RM 5.00</span>
+                  </div>
+                  <div class="weight-select-wrapper">
+                    <select id="weight-select-bb02" class="weight-select" onchange="onWeightSelectChange('bb02', this.value)" aria-label="Weight options for Choco Bear Biscuits">
+                      <option value="100g" data-price="5.00" selected>100g (RM 5.00)</option>
+                      <option value="200g" data-price="8.00">200g (RM 8.00)</option>
+                      <option value="300g" data-price="12.00">300g (RM 12.00)</option>
+                      <option value="400g" data-price="15.00">400g (RM 15.00)</option>
+                    </select>
+                  </div>
+                  <div class="weight-pill-row" role="group" aria-label="Select Weight for Choco Bear Biscuits">
+                    <button type="button" class="weight-pill-btn active" data-weight="100g" onclick="selectWeightPill('bb02', '100g')">100g</button>
+                    <button type="button" class="weight-pill-btn" data-weight="200g" onclick="selectWeightPill('bb02', '200g')">200g</button>
+                    <button type="button" class="weight-pill-btn" data-weight="300g" onclick="selectWeightPill('bb02', '300g')">300g</button>
+                    <button type="button" class="weight-pill-btn" data-weight="400g" onclick="selectWeightPill('bb02', '400g')">400g</button>
+                  </div>
                 </div>
               </div>
               <div class="card-footer">
                 <div class="price-block">
                   <span class="price-label">Price</span>
-                  <span class="price-value">RM 4.50</span>
+                  <span class="price-value" id="price-bb02">RM 5.00</span>
                 </div>
-                <button class="btn-card-action" onclick="openOrderModal('Choco Bear Biscuits (140g Pouch - RM 4.50)')">
+                <button class="btn-card-action" id="btn-order-bb02" onclick="openOrderModalForProduct('bb02')">
                   <span>Order Pouch</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1620,7 +1791,7 @@
             </div>
 
             <!-- Card 3: The Breakout Duo Pack (BB-DUO) -->
-            <div class="product-card">
+            <div class="product-card" id="card-bbduo">
               <div>
                 <div class="card-kicker">
                   <span class="item-code">BUNDLE // BB-DUO</span>
@@ -1632,18 +1803,27 @@
                     1x Ice Gem Pouch + 1x Choco Bear Pouch bundle. The complete revision sweet & chocolate survival pack.
                   </p>
                   <ul class="spec-list">
-                    <li class="spec-item"><span class="spec-bullet"></span> 1x Ice Gem Food-Grade Stand-Up Ziplock Pouch (140g)</li>
-                    <li class="spec-item"><span class="spec-bullet"></span> 1x Choco Bear Food-Grade Stand-Up Ziplock Pouch (140g)</li>
-                    <li class="spec-item"><span class="spec-bullet"></span> Full revision sweet & chocolate combo (Saves RM 0.50)</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> 1x Ice Gem Food-Grade Stand-Up Ziplock Pouch</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> 1x Choco Bear Food-Grade Stand-Up Ziplock Pouch</li>
+                    <li class="spec-item"><span class="spec-bullet"></span> Full revision sweet & chocolate combo (Saves RM 1.00)</li>
                   </ul>
+                </div>
+                <div class="weight-selector-container">
+                  <div class="weight-selector-header">
+                    <span class="weight-selector-label">Bundle Portions</span>
+                    <span class="weight-selected-badge" id="badge-bbduo">2x Pouches &bull; RM 8.00</span>
+                  </div>
+                  <div class="bundle-static-pill">
+                    <span>Includes 1x Ice Gem + 1x Choco Bear</span>
+                  </div>
                 </div>
               </div>
               <div class="card-footer">
                 <div class="price-block">
                   <span class="price-label">Bundle Price</span>
-                  <span class="price-value">RM 8.00</span>
+                  <span class="price-value" id="price-bbduo">RM 8.00</span>
                 </div>
-                <button class="btn-card-action" onclick="openOrderModal('The Breakout Duo Pack (2x Pouches - RM 8.00)')">
+                <button class="btn-card-action" id="btn-order-bbduo" onclick="openOrderModal('The Breakout Duo Pack (2x Pouches - RM 8.00)')">
                   <span>Select Bundle</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1906,22 +2086,40 @@
 
         <form onsubmit="handleOrderSubmit(event)">
           <div class="modal-input-group">
-            <label for="order-selection">Selected Item</label>
-            <select id="order-selection">
-              <option value="Ice Gem Biscuits (140g Pouch - RM 4.00)">Ice Gem Biscuits (140g Pouch - RM 4.00)</option>
-              <option value="Choco Bear Biscuits (140g Pouch - RM 4.50)">Choco Bear Biscuits (140g Pouch - RM 4.50)</option>
-              <option value="The Breakout Duo Pack (2x Pouches - RM 8.00)">The Breakout Duo Pack (2x Pouches - RM 8.00)</option>
+            <label for="order-selection">Selected Item & Tier</label>
+            <select id="order-selection" onchange="syncModalSummary()">
+              <optgroup label="Ice Gem Biscuits (BB-01)">
+                <option value="Ice Gem Biscuits (100g - RM 4.00)" data-item="Ice Gem Biscuits" data-weight="100g" data-price="4.00">Ice Gem Biscuits - 100g (RM 4.00)</option>
+                <option value="Ice Gem Biscuits (200g - RM 7.00)" data-item="Ice Gem Biscuits" data-weight="200g" data-price="7.00">Ice Gem Biscuits - 200g (RM 7.00)</option>
+                <option value="Ice Gem Biscuits (300g - RM 10.00)" data-item="Ice Gem Biscuits" data-weight="300g" data-price="10.00">Ice Gem Biscuits - 300g (RM 10.00)</option>
+                <option value="Ice Gem Biscuits (400g - RM 13.00)" data-item="Ice Gem Biscuits" data-weight="400g" data-price="13.00">Ice Gem Biscuits - 400g (RM 13.00)</option>
+              </optgroup>
+              <optgroup label="Choco Bear Biscuits (BB-02)">
+                <option value="Choco Bear Biscuits (100g - RM 5.00)" data-item="Choco Bear Biscuits" data-weight="100g" data-price="5.00">Choco Bear Biscuits - 100g (RM 5.00)</option>
+                <option value="Choco Bear Biscuits (200g - RM 8.00)" data-item="Choco Bear Biscuits" data-weight="200g" data-price="8.00">Choco Bear Biscuits - 200g (RM 8.00)</option>
+                <option value="Choco Bear Biscuits (300g - RM 12.00)" data-item="Choco Bear Biscuits" data-weight="300g" data-price="12.00">Choco Bear Biscuits - 300g (RM 12.00)</option>
+                <option value="Choco Bear Biscuits (400g - RM 15.00)" data-item="Choco Bear Biscuits" data-weight="400g" data-price="15.00">Choco Bear Biscuits - 400g (RM 15.00)</option>
+              </optgroup>
+              <optgroup label="Value Bundles">
+                <option value="The Breakout Duo Pack (2x Pouches - RM 8.00)" data-item="The Breakout Duo Pack" data-weight="2x Pouches" data-price="8.00">The Breakout Duo Pack - 2x Pouches (RM 8.00)</option>
+              </optgroup>
             </select>
           </div>
 
           <div class="modal-input-group">
             <label for="order-quantity">Quantity (Pouches / Bundles)</label>
-            <select id="order-quantity">
-              <option value="1 Pouch / Bundle">1 Pouch</option>
-              <option value="2 Pouches / Bundles">2 Pouches</option>
-              <option value="3 Pouches / Bundles">3 Pouches</option>
-              <option value="4 Pouches / Bundles (Study Pod Pack)">4 Pouches (Study Pod Pack)</option>
+            <select id="order-quantity" onchange="syncModalSummary()">
+              <option value="1 Pouch">1 Pouch</option>
+              <option value="2 Pouches">2 Pouches</option>
+              <option value="3 Pouches">3 Pouches</option>
+              <option value="4 Pouches (Study Pod Pack)">4 Pouches (Study Pod Pack)</option>
             </select>
+          </div>
+
+          <div class="modal-summary-strip" id="modal-summary-strip">
+            <span class="modal-summary-item" id="modal-summary-weight">Weight: 100g</span>
+            <span class="modal-summary-separator">&bull;</span>
+            <span class="modal-summary-item" id="modal-summary-price">Total Price: <strong>RM 4.00</strong></span>
           </div>
 
           <div class="modal-input-group">
@@ -1950,12 +2148,130 @@
     const mobileToggle = document.getElementById('mobile-toggle');
     const mobileDrawer = document.getElementById('mobile-drawer');
 
-    mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('open');
-    });
+    if (mobileToggle && mobileDrawer) {
+      mobileToggle.addEventListener('click', () => {
+        mobileDrawer.classList.toggle('open');
+      });
+    }
 
     function closeMobileMenu() {
-      mobileDrawer.classList.remove('open');
+      if (mobileDrawer) {
+        mobileDrawer.classList.remove('open');
+      }
+    }
+
+    // Product Tier Pricing Configuration
+    const PRODUCT_TIERS = {
+      'bb01': {
+        name: 'Ice Gem Biscuits',
+        code: 'BB-01',
+        defaultWeight: '100g',
+        tiers: {
+          '100g': 4.00,
+          '200g': 7.00,
+          '300g': 10.00,
+          '400g': 13.00
+        }
+      },
+      'bb02': {
+        name: 'Choco Bear Biscuits',
+        code: 'BB-02',
+        defaultWeight: '100g',
+        tiers: {
+          '100g': 5.00,
+          '200g': 8.00,
+          '300g': 12.00,
+          '400g': 15.00
+        }
+      },
+      'bbduo': {
+        name: 'The Breakout Duo Pack',
+        code: 'BB-DUO',
+        defaultWeight: '2x Pouches',
+        tiers: {
+          '2x Pouches': 8.00
+        }
+      }
+    };
+
+    // Current State for each product
+    const currentProductState = {
+      'bb01': { weight: '100g', price: 4.00 },
+      'bb02': { weight: '100g', price: 5.00 },
+      'bbduo': { weight: '2x Pouches', price: 8.00 }
+    };
+
+    function buildWhatsAppOrderUrl(itemName, weight, qtyNum, totalPrice, room) {
+      const roomLocation = room && room.trim() ? room.trim() : '[Room / Pickup Point Pending]';
+      const qtyText = qtyNum === 1 ? '1 Pouch' : `${qtyNum} Pouches`;
+      const priceFormatted = typeof totalPrice === 'number' ? 'RM ' + totalPrice.toFixed(2) : totalPrice;
+
+      const message = `Hello Breakout Bites Studio!\n\nI would like to place an order:\n- Item: ${itemName}\n- Weight: ${weight}\n- Quantity: ${qtyText}\n- Total Price: ${priceFormatted}\n- Delivery Location: ${roomLocation}\n- Packaging: Food-Grade Stand-Up Ziplock Pouch\n- Payment Method: DuitNow QR\n\nPlease confirm availability and runner dispatch.`;
+
+      return `https://wa.me/601165088912?text=${encodeURIComponent(message)}`;
+    }
+
+    function updateProductUI(productId) {
+      const state = currentProductState[productId];
+      const product = PRODUCT_TIERS[productId];
+      if (!product || !state) return;
+
+      const priceStr = 'RM ' + state.price.toFixed(2);
+
+      // 1. Update Price Value display
+      const priceElem = document.getElementById('price-' + productId);
+      if (priceElem) priceElem.textContent = priceStr;
+
+      // 2. Update Badge text
+      const badgeElem = document.getElementById('badge-' + productId);
+      if (badgeElem) badgeElem.innerHTML = `${state.weight} &bull; ${priceStr}`;
+
+      // 3. Update spec list weight if present
+      const specElem = document.getElementById('spec-weight-' + productId);
+      if (specElem) specElem.textContent = state.weight;
+
+      // 4. Update Select Dropdown in card
+      const selectElem = document.getElementById('weight-select-' + productId);
+      if (selectElem && selectElem.value !== state.weight) {
+        selectElem.value = state.weight;
+      }
+
+      // 5. Update Pill Buttons in card
+      const card = document.getElementById('card-' + productId);
+      if (card) {
+        const pills = card.querySelectorAll('.weight-pill-btn');
+        pills.forEach(pill => {
+          if (pill.getAttribute('data-weight') === state.weight) {
+            pill.classList.add('active');
+          } else {
+            pill.classList.remove('active');
+          }
+        });
+      }
+
+      // 6. Update Button metadata & WhatsApp URL
+      const btn = document.getElementById('btn-order-' + productId);
+      if (btn) {
+        btn.setAttribute('data-selected-weight', state.weight);
+        btn.setAttribute('data-total-price', priceStr);
+        const waUrl = buildWhatsAppOrderUrl(product.name, state.weight, 1, state.price, '');
+        btn.setAttribute('data-whatsapp-url', waUrl);
+      }
+    }
+
+    function onWeightSelectChange(productId, selectedWeight) {
+      const product = PRODUCT_TIERS[productId];
+      if (!product || !product.tiers[selectedWeight]) return;
+
+      currentProductState[productId] = {
+        weight: selectedWeight,
+        price: product.tiers[selectedWeight]
+      };
+      updateProductUI(productId);
+    }
+
+    function selectWeightPill(productId, weight) {
+      onWeightSelectChange(productId, weight);
     }
 
     // Modal Operations
@@ -1965,9 +2281,62 @@
     const orderDorm = document.getElementById('order-dorm');
     const orderQuantity = document.getElementById('order-quantity');
 
+    function syncModalSummary() {
+      if (!orderSelection || !orderQuantity) return;
+      const opt = orderSelection.options[orderSelection.selectedIndex];
+      if (!opt) return;
+
+      const weight = opt.getAttribute('data-weight') || 'Standard Pouch';
+      const unitPrice = parseFloat(opt.getAttribute('data-price') || '4.00');
+      const qtyStr = orderQuantity.value;
+      const qtyMatch = qtyStr.match(/\d+/);
+      const qtyNum = qtyMatch ? parseInt(qtyMatch[0], 10) : 1;
+      const totalPrice = unitPrice * qtyNum;
+
+      const weightSummaryElem = document.getElementById('modal-summary-weight');
+      const priceSummaryElem = document.getElementById('modal-summary-price');
+      if (weightSummaryElem) weightSummaryElem.textContent = `Weight: ${weight}`;
+      if (priceSummaryElem) priceSummaryElem.innerHTML = `Total Price: <strong>RM ${totalPrice.toFixed(2)}</strong>`;
+    }
+
+    function openOrderModalForProduct(productId) {
+      const product = PRODUCT_TIERS[productId];
+      const state = currentProductState[productId];
+      if (!product || !state) return;
+
+      // Select corresponding option in modal
+      let matched = false;
+      for (let i = 0; i < orderSelection.options.length; i++) {
+        const opt = orderSelection.options[i];
+        if (opt.getAttribute('data-item') === product.name && opt.getAttribute('data-weight') === state.weight) {
+          orderSelection.selectedIndex = i;
+          matched = true;
+          break;
+        }
+      }
+
+      const priceStr = 'RM ' + state.price.toFixed(2);
+      modalProductTitle.textContent = `${product.name} (${state.weight} - ${priceStr})`;
+      syncModalSummary();
+      modalBackdrop.classList.add('active');
+      setTimeout(() => orderDorm.focus(), 100);
+    }
+
     function openOrderModal(itemName) {
       modalProductTitle.textContent = itemName;
-      orderSelection.value = itemName;
+
+      // Try to find matching option in orderSelection
+      let matched = false;
+      for (let i = 0; i < orderSelection.options.length; i++) {
+        const opt = orderSelection.options[i];
+        if (opt.value === itemName || opt.textContent.includes(itemName) || itemName.includes(opt.value)) {
+          orderSelection.selectedIndex = i;
+          matched = true;
+          break;
+        }
+      }
+
+      syncModalSummary();
       modalBackdrop.classList.add('active');
       setTimeout(() => orderDorm.focus(), 100);
     }
@@ -1978,20 +2347,25 @@
 
     function handleOrderSubmit(e) {
       e.preventDefault();
-      const item = orderSelection.value;
-      const qty = orderQuantity.value;
+      const selectedOption = orderSelection.options[orderSelection.selectedIndex];
+      const itemName = selectedOption ? (selectedOption.getAttribute('data-item') || selectedOption.value) : orderSelection.value;
+      const weight = selectedOption ? (selectedOption.getAttribute('data-weight') || 'Standard Pouch') : 'Standard Pouch';
+      const unitPrice = selectedOption ? parseFloat(selectedOption.getAttribute('data-price') || '4.00') : 4.00;
+
+      const qtyStr = orderQuantity.value;
+      const qtyMatch = qtyStr.match(/\d+/);
+      const qtyNum = qtyMatch ? parseInt(qtyMatch[0], 10) : 1;
+      const totalPrice = unitPrice * qtyNum;
       const room = orderDorm.value.trim();
 
-      const message = `Hello Breakout Bites Studio!%0A%0AI would like to place an order:%0A- Item: ${encodeURIComponent(item)}%0A- Quantity: ${encodeURIComponent(qty)}%0A- Delivery Location: ${encodeURIComponent(room)}%0A- Packaging: Food-Grade Stand-Up Ziplock Pouch%0A- Payment Method: DuitNow QR%0A%0APlease confirm availability and runner dispatch.`;
-      
-      const whatsappUrl = `https://wa.me/601165088912?text=${message}`;
+      const whatsappUrl = buildWhatsAppOrderUrl(itemName, weight, qtyNum, totalPrice, room);
       window.open(whatsappUrl, '_blank');
       closeOrderModal();
     }
 
     // Copy Fast Order Template
     function copyTemplate() {
-      const template = "Halo Breakout Bites Studio!\nSaya nak order:\n- Item: Ice Gem / Choco Bear / Duo Pack\n- Kuantiti: 1\n- Lokasi Hantar: [Contoh: Blok B Bilik 204 / Belakang Surau (Container)]\n- Bayaran: DuitNow QR";
+      const template = "Halo Breakout Bites Studio!\nSaya nak order:\n- Item: Ice Gem / Choco Bear / Duo Pack\n- Berat: 100g / 200g / 300g / 400g\n- Kuantiti: 1\n- Lokasi Hantar: [Contoh: Blok B Bilik 204 / Belakang Surau (Container)]\n- Bayaran: DuitNow QR";
       navigator.clipboard.writeText(template).then(() => {
         showToast("Template copied to clipboard!");
       }).catch(() => {
@@ -2014,6 +2388,19 @@
         closeOrderModal();
       }
     });
+
+    // Initialize all product UI tiers on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      updateProductUI('bb01');
+      updateProductUI('bb02');
+      updateProductUI('bbduo');
+      syncModalSummary();
+    });
+    // Fallback immediate initialization
+    updateProductUI('bb01');
+    updateProductUI('bb02');
+    updateProductUI('bbduo');
+    syncModalSummary();
   </script>
 </body>
 </html>
