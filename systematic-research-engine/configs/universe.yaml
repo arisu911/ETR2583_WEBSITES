@@ -1,0 +1,49 @@
+base_currency: "USD" # Configurable base currency: USD or MYR
+
+universe:
+  malaysia:
+    region: "MY"
+    local_currency: "MYR"
+    fx_rate_ticker: "USDMYR=X"
+    instruments:
+      - { name: "KLCI", ticker: "^KLSE", role: "benchmark", asset_class: "index" }
+      - { name: "Maybank", ticker: "1155.KL", role: "equity", asset_class: "equity" }
+      - { name: "Public Bank", ticker: "1295.KL", role: "equity", asset_class: "equity" }
+      - { name: "CIMB", ticker: "1023.KL", role: "equity", asset_class: "equity" }
+      - { name: "Tenaga Nasional", ticker: "5347.KL", role: "equity", asset_class: "equity" }
+      - { name: "Press Metal", ticker: "8869.KL", role: "equity", asset_class: "equity" }
+      - { name: "YTL Power", ticker: "6742.KL", role: "equity", asset_class: "equity" }
+      - { name: "USD/MYR", ticker: "USDMYR=X", role: "macro", asset_class: "fx" }
+
+  united_states:
+    region: "US"
+    local_currency: "USD"
+    instruments:
+      - { name: "S&P 500", ticker: "^GSPC", role: "benchmark", asset_class: "index" }
+      - { name: "Nasdaq-100", ticker: "^NDX", role: "benchmark", asset_class: "index" }
+      - { name: "Russell 2000", ticker: "^RUT", role: "benchmark", asset_class: "index" }
+      - { name: "Apple", ticker: "AAPL", role: "equity", asset_class: "equity" }
+      - { name: "Nvidia", ticker: "NVDA", role: "equity", asset_class: "equity" }
+      - { name: "JPMorgan", ticker: "JPM", role: "equity", asset_class: "equity" }
+      - { name: "QQQ", ticker: "QQQ", role: "tradable_proxy", asset_class: "etf" }
+
+  japan:
+    region: "JP"
+    local_currency: "JPY"
+    fx_rate_ticker: "JPY=X"
+    instruments:
+      - { name: "Nikkei 225", ticker: "^N225", role: "benchmark", asset_class: "index" }
+      - { name: "TOPIX", ticker: "^TOPX", role: "benchmark", asset_class: "index" }
+      - { name: "Toyota", ticker: "7203.T", role: "equity", asset_class: "equity" }
+      - { name: "USD/JPY", ticker: "JPY=X", role: "macro", asset_class: "fx" }
+
+  cross_market_macro:
+    region: "GLOBAL"
+    local_currency: "USD"
+    instruments:
+      - { name: "Gold", ticker: "GC=F", role: "commodity", asset_class: "commodity" }
+      - { name: "Brent Crude", ticker: "BZ=F", role: "commodity", asset_class: "commodity" }
+      - { name: "Copper", ticker: "HG=F", role: "commodity", asset_class: "commodity" }
+      - { name: "DXY", ticker: "DX-Y.NYB", role: "macro", asset_class: "fx_index" }
+      - { name: "VIX", ticker: "^VIX", role: "volatility", asset_class: "risk_indicator" }
+      - { name: "US 10Y Yield", ticker: "^TNX", role: "rates", asset_class: "rates" }

@@ -1,0 +1,25 @@
+# Multi-Market Portfolio Allocation Mandates & Risk Limits
+
+mandates:
+  max_single_asset: 0.25          # Maximum 25% concentration in any single security
+  max_region_exposure: 0.50       # Maximum 50% concentration in any single region (MY, US, JP, Macro)
+  min_cash_buffer: 0.00           # Minimum cash reserve
+  max_commodity_exposure: 0.30    # Maximum 30% aggregate commodity exposure
+
+frictions:
+  bursa_brokerage_bps: 10.0       # 0.10% standard Malaysian brokerage
+  bursa_clearing_bps: 3.0         # 0.03% Bursa clearing fee
+  bursa_stamp_duty_bps: 10.0      # 0.10% statutory stamp duty
+  bursa_stamp_duty_cap: 1000.0    # RM 1,000 statutory cap
+  us_brokerage_bps: 2.0           # US execution commission
+  jp_brokerage_bps: 5.0           # Japanese equities commission
+  commodity_brokerage_bps: 3.0    # Futures/commodity proxy commission
+  bid_ask_spread_bps: 5.0         # Blended liquidity half-spread
+  rebalance_slippage_bps: 4.0     # Market impact execution slippage
+
+tail_risk:
+  confidence_levels:
+    - 0.95
+    - 0.99
+  max_acceptable_mvar_95: 0.030   # Daily modified Cornish-Fisher VaR threshold (3.0%)
+  drawdown_stop_loss: 0.20        # Circuit breaker threshold (20% drawdown)
