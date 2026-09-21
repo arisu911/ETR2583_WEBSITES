@@ -680,7 +680,7 @@ def generate_breakout_bites_poster():
     
     # Price Tag Pill
     price1_str = "RM 4.00"
-    price1_sub = "/ 140g Pouch"
+    price1_sub = "/ 100g Pouch"
     tb_p1 = draw.textbbox((0, 0), price1_str, font=FONT_PRICE_MAIN)
     p1_tag_w = (tb_p1[2] - tb_p1[0]) + int(112 * SCALE)
     p1_tag_x = card1_x1 - c1_pad - p1_tag_w
@@ -727,8 +727,8 @@ def generate_breakout_bites_poster():
     draw.text((card2_x0 + c2_pad, card2_y0 + int(56*SCALE)), p2_title, font=FONT_CARD_TITLE, fill=CLR_WHITE)
     
     # Price Tag Pill
-    price2_str = "RM 4.50"
-    price2_sub = "/ 140g Pouch"
+    price2_str = "RM 5.00"
+    price2_sub = "/ 100g Pouch"
     tb_p2 = draw.textbbox((0, 0), price2_str, font=FONT_PRICE_MAIN)
     p2_tag_w = (tb_p2[2] - tb_p2[0]) + int(112 * SCALE)
     p2_tag_x = card2_x1 - c2_pad - p2_tag_w
@@ -754,9 +754,9 @@ def generate_breakout_bites_poster():
         f2_y += int(26 * SCALE)
         
     # ---------------------------------------------------------
-    # SECTION E: COMBO VALUE BANNER (The Breakout Duo Pack)
+    # SECTION E: COMBINED PACKAGE SPECIFICATION (Ice Gem + Choco Bear Bundle)
     # ---------------------------------------------------------
-    print("[*] Drawing Duo Pack Value Banner...")
+    print("[*] Drawing Combined Bundle Specification Banner...")
     b_y0 = int(942 * SCALE)
     b_h = int(82 * SCALE)
     b_y1 = b_y0 + b_h
@@ -775,16 +775,16 @@ def generate_breakout_bites_poster():
     )
     
     # Combo header line with flame icon
-    draw_flame_icon(draw, (W // 2) - int(195 * SCALE), b_y0 + int(19 * SCALE), int(10 * SCALE), CLR_CARAMEL)
-    draw_flame_icon(draw, (W // 2) + int(195 * SCALE), b_y0 + int(19 * SCALE), int(10 * SCALE), CLR_CARAMEL)
-    draw_centered_text(draw, "BEST VALUE COMBO DEAL: THE BREAKOUT DUO PACK", b_y0 + int(19 * SCALE), FONT_BODY_BOLD, CLR_GOLD, W)
+    draw_flame_icon(draw, (W // 2) - int(210 * SCALE), b_y0 + int(19 * SCALE), int(10 * SCALE), CLR_CARAMEL)
+    draw_flame_icon(draw, (W // 2) + int(210 * SCALE), b_y0 + int(19 * SCALE), int(10 * SCALE), CLR_CARAMEL)
+    draw_centered_text(draw, "COMBINED PACKAGE: ICE GEM + CHOCO BEAR BUNDLE", b_y0 + int(19 * SCALE), FONT_BODY_BOLD, CLR_GOLD, W)
     
     # Bundle Deal Pricing & Savings Pill
-    b_detail_text = "1x Ice Gem (140g) + 1x Choco Bear (140g) for ONLY RM 8.00"
+    b_detail_text = "100g Ice Gem + 100g Choco Bear — RM 8.00 (200g Total)"
     tb_det = draw.textbbox((0, 0), b_detail_text, font=FONT_PRICE_MAIN)
     det_w = tb_det[2] - tb_det[0]
     
-    save_badge_text = "SAVE RM 0.50"
+    save_badge_text = "COMBINED BUNDLE"
     tb_sav = draw.textbbox((0, 0), save_badge_text, font=FONT_MICRO_LABEL)
     sav_w = tb_sav[2] - tb_sav[0]
     
@@ -793,7 +793,7 @@ def generate_breakout_bites_poster():
     
     draw.text((start_det_x, b_y0 + int(34 * SCALE)), b_detail_text, font=FONT_PRICE_MAIN, fill=CLR_WHITE)
     
-    # Green savings pill
+    # Emerald combined badge
     sav_px0 = start_det_x + det_w + int(14 * SCALE)
     sav_py0 = b_y0 + int(34 * SCALE)
     sav_px1 = sav_px0 + sav_w + int(16 * SCALE)
@@ -801,7 +801,7 @@ def generate_breakout_bites_poster():
     draw.rounded_rectangle([sav_px0, sav_py0, sav_px1, sav_py1], radius=int(6*SCALE), fill=CLR_EMERALD)
     draw.text((sav_px0 + int(8*SCALE), sav_py0 + int(4*SCALE)), save_badge_text, font=FONT_MICRO_LABEL, fill=(10, 24, 38))
     
-    b_perks = "Sealed Freshness • Zero Aggregator Markups • Direct Hostel Doorstep Delivery"
+    b_perks = "100g (RM8) • 200g (RM14) • 300g (RM20) • 400g (RM25) • Symmetrical 1:1 Dual Package"
     draw_centered_text(draw, b_perks, b_y0 + int(67 * SCALE), FONT_MICRO_LABEL, CLR_CYAN_ACCENT, W)
     
     # ---------------------------------------------------------
